@@ -1,0 +1,21 @@
+{
+  "representation": "outer",
+  "source_merge": "C:\\Users\\olegk\\Desktop\\multimodal-hte-breast-cancer\\data\\processed\\MERGE_continuous_outer\\08_composite.csv",
+  "source_merge_sha256": "06accdea0f7fb926baa36988687c54cf72487dbcc58b2a08e634790c47d1f0e8",
+  "n_merge_rows": 1076,
+  "n_ite_rows": 1076,
+  "n_joined_rows": 1076,
+  "n_unmatched_merge": 0,
+  "n_unmatched_ite": 0,
+  "merge_id_column": "Unnamed: 0",
+  "modality_feature_counts": {
+    "clinical": 144,
+    "rna": 51,
+    "cnv": 51,
+    "mutation": 51,
+    "methylation": 51,
+    "mirna": 51,
+    "protein": 51
+  },
+  "output": "C:\\Users\\olegk\\Desktop\\multimodal-hte-breast-cancer\\data\\derived\\cohorts\\master_outer.csv"
+}

@@ -1,0 +1,205 @@
+[
+  {
+    "item": "processed directory",
+    "required": true,
+    "found": true,
+    "path": "C:\\Users\\olegk\\Desktop\\multimodal-hte-breast-cancer\\data\\processed",
+    "note": "Copied legacy processed data"
+  },
+  {
+    "item": "ITE treatment/outcome table",
+    "required": true,
+    "found": true,
+    "path": "C:\\Users\\olegk\\Desktop\\multimodal-hte-breast-cancer\\data\\processed\\output\\ite_ready_dataset_v2.csv",
+    "note": "Prefer v2"
+  },
+  {
+    "item": "MERGE 08 composite",
+    "required": true,
+    "found": true,
+    "path": "C:\\Users\\olegk\\Desktop\\multimodal-hte-breast-cancer\\data\\processed\\MERGE\\08_composite.csv",
+    "note": "Complete-case frozen matrix"
+  },
+  {
+    "item": "MERGE_continuous_outer 08 composite",
+    "required": true,
+    "found": true,
+    "path": "C:\\Users\\olegk\\Desktop\\multimodal-hte-breast-cancer\\data\\processed\\MERGE_continuous_outer\\08_composite.csv",
+    "note": "Outer frozen matrix"
+  },
+  {
+    "item": "clinical folder",
+    "required": true,
+    "found": true,
+    "path": "C:\\Users\\olegk\\Desktop\\multimodal-hte-breast-cancer\\data\\processed\\01_Clinical",
+    "note": "Legacy modality folder"
+  },
+  {
+    "item": "cnv folder",
+    "required": true,
+    "found": true,
+    "path": "C:\\Users\\olegk\\Desktop\\multimodal-hte-breast-cancer\\data\\processed\\02_CNV",
+    "note": "Legacy modality folder"
+  },
+  {
+    "item": "cnv summary",
+    "required": true,
+    "found": true,
+    "path": "C:\\Users\\olegk\\Desktop\\multimodal-hte-breast-cancer\\data\\processed\\02_CNV\\mb_results\\summary_all_results.csv",
+    "note": "MB summary"
+  },
+  {
+    "item": "cnv statistical_filtered",
+    "required": true,
+    "found": true,
+    "path": "C:\\Users\\olegk\\Desktop\\multimodal-hte-breast-cancer\\data\\processed\\02_CNV\\statistical_filtered",
+    "note": "Candidate panels"
+  },
+  {
+    "item": "cnv mb_results",
+    "required": true,
+    "found": true,
+    "path": "C:\\Users\\olegk\\Desktop\\multimodal-hte-breast-cancer\\data\\processed\\02_CNV\\mb_results",
+    "note": "Selected feature lists"
+  },
+  {
+    "item": "methylation folder",
+    "required": true,
+    "found": true,
+    "path": "C:\\Users\\olegk\\Desktop\\multimodal-hte-breast-cancer\\data\\processed\\03_Methylation",
+    "note": "Legacy modality folder"
+  },
+  {
+    "item": "methylation summary",
+    "required": true,
+    "found": true,
+    "path": "C:\\Users\\olegk\\Desktop\\multimodal-hte-breast-cancer\\data\\processed\\03_Methylation\\mb_results\\summary_all_results.csv",
+    "note": "MB summary"
+  },
+  {
+    "item": "methylation statistical_filtered",
+    "required": true,
+    "found": true,
+    "path": "C:\\Users\\olegk\\Desktop\\multimodal-hte-breast-cancer\\data\\processed\\03_Methylation\\statistical_filtered",
+    "note": "Candidate panels"
+  },
+  {
+    "item": "methylation mb_results",
+    "required": true,
+    "found": true,
+    "path": "C:\\Users\\olegk\\Desktop\\multimodal-hte-breast-cancer\\data\\processed\\03_Methylation\\mb_results",
+    "note": "Selected feature lists"
+  },
+  {
+    "item": "mirna folder",
+    "required": true,
+    "found": true,
+    "path": "C:\\Users\\olegk\\Desktop\\multimodal-hte-breast-cancer\\data\\processed\\04_miRNA",
+    "note": "Legacy modality folder"
+  },
+  {
+    "item": "mirna summary",
+    "required": true,
+    "found": true,
+    "path": "C:\\Users\\olegk\\Desktop\\multimodal-hte-breast-cancer\\data\\processed\\04_miRNA\\mb_results\\summary_all_results.csv",
+    "note": "MB summary"
+  },
+  {
+    "item": "mirna statistical_filtered",
+    "required": true,
+    "found": true,
+    "path": "C:\\Users\\olegk\\Desktop\\multimodal-hte-breast-cancer\\data\\processed\\04_miRNA\\statistical_filtered",
+    "note": "Candidate panels"
+  },
+  {
+    "item": "mirna mb_results",
+    "required": true,
+    "found": true,
+    "path": "C:\\Users\\olegk\\Desktop\\multimodal-hte-breast-cancer\\data\\processed\\04_miRNA\\mb_results",
+    "note": "Selected feature lists"
+  },
+  {
+    "item": "mutation folder",
+    "required": true,
+    "found": true,
+    "path": "C:\\Users\\olegk\\Desktop\\multimodal-hte-breast-cancer\\data\\processed\\05_Mutation",
+    "note": "Legacy modality folder"
+  },
+  {
+    "item": "mutation summary",
+    "required": true,
+    "found": true,
+    "path": "C:\\Users\\olegk\\Desktop\\multimodal-hte-breast-cancer\\data\\processed\\05_Mutation\\mb_results\\summary_all_results.csv",
+    "note": "MB summary"
+  },
+  {
+    "item": "mutation statistical_filtered",
+    "required": true,
+    "found": true,
+    "path": "C:\\Users\\olegk\\Desktop\\multimodal-hte-breast-cancer\\data\\processed\\05_Mutation\\statistical_filtered",
+    "note": "Candidate panels"
+  },
+  {
+    "item": "mutation mb_results",
+    "required": true,
+    "found": true,
+    "path": "C:\\Users\\olegk\\Desktop\\multimodal-hte-breast-cancer\\data\\processed\\05_Mutation\\mb_results",
+    "note": "Selected feature lists"
+  },
+  {
+    "item": "protein folder",
+    "required": true,
+    "found": true,
+    "path": "C:\\Users\\olegk\\Desktop\\multimodal-hte-breast-cancer\\data\\processed\\06_proteins",
+    "note": "Legacy modality folder"
+  },
+  {
+    "item": "protein summary",
+    "required": true,
+    "found": true,
+    "path": "C:\\Users\\olegk\\Desktop\\multimodal-hte-breast-cancer\\data\\processed\\06_proteins\\mb_results\\summary_all_results.csv",
+    "note": "MB summary"
+  },
+  {
+    "item": "protein statistical_filtered",
+    "required": true,
+    "found": true,
+    "path": "C:\\Users\\olegk\\Desktop\\multimodal-hte-breast-cancer\\data\\processed\\06_proteins\\statistical_filtered",
+    "note": "Candidate panels"
+  },
+  {
+    "item": "protein mb_results",
+    "required": true,
+    "found": true,
+    "path": "C:\\Users\\olegk\\Desktop\\multimodal-hte-breast-cancer\\data\\processed\\06_proteins\\mb_results",
+    "note": "Selected feature lists"
+  },
+  {
+    "item": "rna folder",
+    "required": true,
+    "found": true,
+    "path": "C:\\Users\\olegk\\Desktop\\multimodal-hte-breast-cancer\\data\\processed\\07_RNA",
+    "note": "Legacy modality folder"
+  },
+  {
+    "item": "rna summary",
+    "required": true,
+    "found": true,
+    "path": "C:\\Users\\olegk\\Desktop\\multimodal-hte-breast-cancer\\data\\processed\\07_RNA\\mb_results\\summary_all_results.csv",
+    "note": "MB summary"
+  },
+  {
+    "item": "rna statistical_filtered",
+    "required": true,
+    "found": true,
+    "path": "C:\\Users\\olegk\\Desktop\\multimodal-hte-breast-cancer\\data\\processed\\07_RNA\\statistical_filtered",
+    "note": "Candidate panels"
+  },
+  {
+    "item": "rna mb_results",
+    "required": true,
+    "found": true,
+    "path": "C:\\Users\\olegk\\Desktop\\multimodal-hte-breast-cancer\\data\\processed\\07_RNA\\mb_results",
+    "note": "Selected feature lists"
+  }
+]

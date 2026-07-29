@@ -1,0 +1,30 @@
+item,required,found,path,note
+processed directory,True,True,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed,Copied legacy processed data
+ITE treatment/outcome table,True,True,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\output\ite_ready_dataset_v2.csv,Prefer v2
+MERGE 08 composite,True,True,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\MERGE\08_composite.csv,Complete-case frozen matrix
+MERGE_continuous_outer 08 composite,True,True,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\MERGE_continuous_outer\08_composite.csv,Outer frozen matrix
+clinical folder,True,True,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\01_Clinical,Legacy modality folder
+cnv folder,True,True,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\02_CNV,Legacy modality folder
+cnv summary,True,True,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\02_CNV\mb_results\summary_all_results.csv,MB summary
+cnv statistical_filtered,True,True,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\02_CNV\statistical_filtered,Candidate panels
+cnv mb_results,True,True,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\02_CNV\mb_results,Selected feature lists
+methylation folder,True,True,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\03_Methylation,Legacy modality folder
+methylation summary,True,True,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\03_Methylation\mb_results\summary_all_results.csv,MB summary
+methylation statistical_filtered,True,True,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\03_Methylation\statistical_filtered,Candidate panels
+methylation mb_results,True,True,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\03_Methylation\mb_results,Selected feature lists
+mirna folder,True,True,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\04_miRNA,Legacy modality folder
+mirna summary,True,True,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\04_miRNA\mb_results\summary_all_results.csv,MB summary
+mirna statistical_filtered,True,True,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\04_miRNA\statistical_filtered,Candidate panels
+mirna mb_results,True,True,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\04_miRNA\mb_results,Selected feature lists
+mutation folder,True,True,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\05_Mutation,Legacy modality folder
+mutation summary,True,True,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\05_Mutation\mb_results\summary_all_results.csv,MB summary
+mutation statistical_filtered,True,True,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\05_Mutation\statistical_filtered,Candidate panels
+mutation mb_results,True,True,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\05_Mutation\mb_results,Selected feature lists
+protein folder,True,True,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\06_proteins,Legacy modality folder
+protein summary,True,True,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\06_proteins\mb_results\summary_all_results.csv,MB summary
+protein statistical_filtered,True,True,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\06_proteins\statistical_filtered,Candidate panels
+protein mb_results,True,True,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\06_proteins\mb_results,Selected feature lists
+rna folder,True,True,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\07_RNA,Legacy modality folder
+rna summary,True,True,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\07_RNA\mb_results\summary_all_results.csv,MB summary
+rna statistical_filtered,True,True,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\07_RNA\statistical_filtered,Candidate panels
+rna mb_results,True,True,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\07_RNA\mb_results,Selected feature lists

@@ -1,0 +1,8 @@
+modality,folder,n_summary_files,summary_paths,n_candidate_csv,n_feature_lists
+clinical,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\01_Clinical,0,,0,0
+cnv,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\02_CNV,1,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\02_CNV\mb_results\summary_all_results.csv,12,56
+methylation,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\03_Methylation,1,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\03_Methylation\mb_results\summary_all_results.csv,12,56
+mirna,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\04_miRNA,1,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\04_miRNA\mb_results\summary_all_results.csv,12,56
+mutation,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\05_Mutation,1,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\05_Mutation\mb_results\summary_all_results.csv,12,56
+protein,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\06_proteins,1,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\06_proteins\mb_results\summary_all_results.csv,12,56
+rna,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\07_RNA,1,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\07_RNA\mb_results\summary_all_results.csv,12,56

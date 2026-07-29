@@ -27,3 +27,8 @@ results/**
 # Secrets / local configuration
 .env
 *.local.yaml
+
+.venv/
+__pycache__/
+*.pyc
+

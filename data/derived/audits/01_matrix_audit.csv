@@ -1,0 +1,33 @@
+label,path,rows,columns,id_column,unique_patient_ids,duplicate_patient_ids,overall_missing_fraction,treatment_columns,outcome_columns,time_columns,n_clinical,n_rna,n_cnv,n_mutation,n_methylation,n_mirna,n_protein
+ite_ready,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\output\ite_ready_dataset_v2.csv,1076,33,patient_id,1076.0,0.0,0.0,T|T_hormone|T_hormone_excl|T_chemo|T_targeted|T_radiation,Y,,13,1,0,0,2,0,2
+complete_case:01_ultra_conservative,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\MERGE\01_ultra_conservative.csv,526,447,Unnamed: 0,526.0,0.0,0.0,,OS,OS.time,144,50,50,50,50,50,50
+complete_case:02_conservative,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\MERGE\02_conservative.csv,526,447,Unnamed: 0,526.0,0.0,0.0,,OS,OS.time,144,50,50,50,50,50,50
+complete_case:03_standard,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\MERGE\03_standard.csv,526,447,Unnamed: 0,526.0,0.0,0.0,,OS,OS.time,144,50,50,50,50,50,50
+complete_case:04_fdr_significant,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\MERGE\04_fdr_significant.csv,526,447,Unnamed: 0,526.0,0.0,0.0,,OS,OS.time,144,50,50,50,50,50,50
+complete_case:05_balanced,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\MERGE\05_balanced.csv,526,447,Unnamed: 0,526.0,0.0,0.0,,OS,OS.time,144,50,50,50,50,50,50
+complete_case:06_correlation,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\MERGE\06_correlation.csv,526,447,Unnamed: 0,526.0,0.0,0.0,,OS,OS.time,144,50,50,50,50,50,50
+complete_case:07_top_correlated,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\MERGE\07_top_correlated.csv,526,447,Unnamed: 0,526.0,0.0,0.0,,OS,OS.time,144,50,50,50,50,50,50
+complete_case:08_composite,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\MERGE\08_composite.csv,526,447,Unnamed: 0,526.0,0.0,0.0,,OS,OS.time,144,50,50,50,50,50,50
+complete_case:4modalities_01_ultra_conservative,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\MERGE\4modalities_01_ultra_conservative.csv,923,295,Unnamed: 0,923.0,0.0,0.0,,,,144,50,50,50,0,0,0
+complete_case:4modalities_02_conservative,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\MERGE\4modalities_02_conservative.csv,923,295,Unnamed: 0,923.0,0.0,0.0,,,,144,50,50,50,0,0,0
+complete_case:4modalities_03_standard,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\MERGE\4modalities_03_standard.csv,923,295,Unnamed: 0,923.0,0.0,0.0,,,,144,50,50,50,0,0,0
+complete_case:4modalities_04_fdr_significant,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\MERGE\4modalities_04_fdr_significant.csv,923,295,Unnamed: 0,923.0,0.0,0.0,,,,144,50,50,50,0,0,0
+complete_case:4modalities_05_balanced,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\MERGE\4modalities_05_balanced.csv,923,295,Unnamed: 0,923.0,0.0,0.0,,,,144,50,50,50,0,0,0
+complete_case:4modalities_06_correlation,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\MERGE\4modalities_06_correlation.csv,923,295,Unnamed: 0,923.0,0.0,0.0,,,,144,50,50,50,0,0,0
+complete_case:4modalities_07_top_correlated,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\MERGE\4modalities_07_top_correlated.csv,923,295,Unnamed: 0,923.0,0.0,0.0,,,,144,50,50,50,0,0,0
+complete_case:4modalities_08_composite,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\MERGE\4modalities_08_composite.csv,923,295,Unnamed: 0,923.0,0.0,0.0,,,,144,50,50,50,0,0,0
+complete_case:merge_summary,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\MERGE\merge_summary.csv,8,9,,,,0.0,,,,0,0,0,0,0,0,0
+complete_case:merge_summary_4modalities,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\MERGE\merge_summary_4modalities.csv,8,11,,,,0.0,,,,0,0,0,0,0,0,0
+complete_case:merge_summary_5modalities,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\MERGE\merge_summary_5modalities.csv,8,12,,,,0.0,,,,0,0,0,0,0,0,0
+complete_case:merge_summary_6modalities,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\MERGE\merge_summary_6modalities.csv,8,12,,,,0.0,,,,0,0,0,0,0,0,0
+complete_case:merge_summary_7modalities,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\MERGE\merge_summary_7modalities.csv,8,12,,,,0.0,,,,0,0,0,0,0,0,0
+complete_case:merge_summary_with_cnv,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\MERGE\merge_summary_with_cnv.csv,8,10,,,,0.0,,,,0,0,0,0,0,0,0
+outer:01_ultra_conservative,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\MERGE_continuous_outer\01_ultra_conservative.csv,1076,453,Unnamed: 0,1076.0,0.0,0.0,,OS,OS.time,144,51,51,51,51,51,51
+outer:02_conservative,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\MERGE_continuous_outer\02_conservative.csv,1076,453,Unnamed: 0,1076.0,0.0,0.0,,OS,OS.time,144,51,51,51,51,51,51
+outer:03_standard,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\MERGE_continuous_outer\03_standard.csv,1076,453,Unnamed: 0,1076.0,0.0,0.0,,OS,OS.time,144,51,51,51,51,51,51
+outer:04_fdr_significant,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\MERGE_continuous_outer\04_fdr_significant.csv,1076,453,Unnamed: 0,1076.0,0.0,0.0,,OS,OS.time,144,51,51,51,51,51,51
+outer:05_balanced,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\MERGE_continuous_outer\05_balanced.csv,1076,453,Unnamed: 0,1076.0,0.0,0.0,,OS,OS.time,144,51,51,51,51,51,51
+outer:06_correlation,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\MERGE_continuous_outer\06_correlation.csv,1076,453,Unnamed: 0,1076.0,0.0,0.0,,OS,OS.time,144,51,51,51,51,51,51
+outer:07_top_correlated,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\MERGE_continuous_outer\07_top_correlated.csv,1076,453,Unnamed: 0,1076.0,0.0,0.0,,OS,OS.time,144,51,51,51,51,51,51
+outer:08_composite,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\MERGE_continuous_outer\08_composite.csv,1076,453,Unnamed: 0,1076.0,0.0,0.0,,OS,OS.time,144,51,51,51,51,51,51
+outer:continuous_outer_summary,C:\Users\olegk\Desktop\multimodal-hte-breast-cancer\data\processed\MERGE_continuous_outer\continuous_outer_summary.csv,8,6,,,,0.0,,,,0,0,0,0,0,0,0
