@@ -1,0 +1,43 @@
+project:
+  cohort: TCGA-BRCA
+  patient_id_column: patient_id
+  output_directory: results/reports
+
+clinical:
+  path: data/raw/tcga_brca/clinical.csv
+  time_column: overall_survival_days
+  event_column: overall_survival_event
+  required_columns:
+    - age_at_diagnosis
+    - pathologic_stage
+    - tumor_size
+    - nodal_status
+    - er_status
+    - pr_status
+    - her2_status
+  treatment_columns:
+    - hormone_therapy
+    - chemotherapy
+    - targeted_therapy
+
+modalities:
+  clinical:
+    path: data/processed/paper1_panels/clinical.csv
+  rnaseq:
+    path: data/processed/paper1_panels/rnaseq.csv
+  mirna:
+    path: data/processed/paper1_panels/mirna.csv
+  methylation:
+    path: data/processed/paper1_panels/methylation.csv
+  protein_rppa:
+    path: data/processed/paper1_panels/protein_rppa.csv
+  mutation:
+    path: data/processed/paper1_panels/mutation.csv
+  cnv:
+    path: data/processed/paper1_panels/cnv.csv
+
+validation:
+  allow_missing_modalities: true
+  fail_on_duplicate_patient_ids: true
+  require_binary_treatment: true
+  require_binary_event: true

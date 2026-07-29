@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+
+# Data: keep only documentation and manifests
+data/raw/**
+!data/raw/.gitkeep
+data/processed/**
+!data/processed/paper1_panels/.gitkeep
+data/external/**
+
+# Generated outputs
+results/**
+!results/.gitkeep
+!results/reports/.gitkeep
+
+# Secrets / local configuration
+.env
+*.local.yaml
