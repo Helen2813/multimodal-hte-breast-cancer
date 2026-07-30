@@ -1,0 +1,31 @@
+{
+  "status": "CANDIDATE_NOT_LOCKED",
+  "paper": "A",
+  "working_title": "Reliability of AI-assisted landmark causal survival estimation in observational breast cancer data",
+  "population": "outer_hormone_hrpos_her2neg",
+  "time_zero": "day 180 after diagnosis among patients alive and uncensored at day 180",
+  "treatment_strategy": "verified treatment initiation from day 0 through day 180 versus no initiation by day 180",
+  "later_initiation_policy": "patients initiating after day 180 remain in the no-initiation-by-day-180 strategy; this is not an ever-versus-never estimand",
+  "primary_estimand": "ATO 730-day post-landmark RMST difference",
+  "primary_censoring_model": "regularized pooled logistic",
+  "primary_outcome_model": "ridge regression",
+  "primary_censoring_truncation": 0.1,
+  "ai_role": "boosted censoring and outcome nuisance models are prespecified sensitivity analyses, not the primary estimator",
+  "primary_effect_days": 28.77317349699449,
+  "primary_if_ci_low_days": -33.49081818245449,
+  "primary_if_ci_high_days": 91.03716517644348,
+  "primary_fixed_boot_ci_low_days": -36.458749209611504,
+  "primary_fixed_boot_ci_high_days": 98.97967010727982,
+  "max_abs_smd_overlap": 0.0654460180002019,
+  "ess_treated": 182.33885237173376,
+  "ess_control": 299.7766791069516,
+  "feasibility_status": "DIRECTION_STABLE_BUT_SENSITIVE",
+  "claim": "robustness and uncertainty of an early-initiation signal; not proof of treatment efficacy",
+  "sensitivity_analyses": [
+    "Gmin 0.05",
+    "boosted-AI censoring and outcome nuisance models",
+    "1095-day post-landmark RMST",
+    "365-day landmark",
+    "descriptive assessment of later initiators"
+  ]
+}

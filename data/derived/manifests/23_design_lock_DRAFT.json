@@ -1,0 +1,41 @@
+{
+  "status": "DRAFT_NOT_LOCKED",
+  "verified_cohort_inputs": [
+    {
+      "cohort": "complete_case_chemo_tnbc",
+      "path": "C:\\Users\\olegk\\Desktop\\multimodal-hte-breast-cancer\\data\\derived\\verified_cohorts\\complete_case_chemo_tnbc_verified.csv",
+      "sha256": "4feca96339e9dfa1fa81ba7039d18a49b2bb558849f918011b39f17fa7737d8c",
+      "rows": 90,
+      "columns": 478
+    },
+    {
+      "cohort": "complete_case_hormone_hrpos_her2neg",
+      "path": "C:\\Users\\olegk\\Desktop\\multimodal-hte-breast-cancer\\data\\derived\\verified_cohorts\\complete_case_hormone_hrpos_her2neg_verified.csv",
+      "sha256": "961fb9530f1396958af32c077f0615b15a7f56b89a397ad3a392be5b94817918",
+      "rows": 281,
+      "columns": 478
+    },
+    {
+      "cohort": "outer_chemo_tnbc",
+      "path": "C:\\Users\\olegk\\Desktop\\multimodal-hte-breast-cancer\\data\\derived\\verified_cohorts\\outer_chemo_tnbc_verified.csv",
+      "sha256": "75d2079e1bebaf1c1aa2600ae47fa07f3f56085071421d016921e5f1a7969d9c",
+      "rows": 161,
+      "columns": 484
+    },
+    {
+      "cohort": "outer_hormone_hrpos_her2neg",
+      "path": "C:\\Users\\olegk\\Desktop\\multimodal-hte-breast-cancer\\data\\derived\\verified_cohorts\\outer_hormone_hrpos_her2neg_verified.csv",
+      "sha256": "5d582c77b2ef0f0aa68ed504c4806a3e7ca78fe7c60716b1256b2c3d5c946897",
+      "rows": 611,
+      "columns": 484
+    }
+  ],
+  "split_assignment": {
+    "path": "C:\\Users\\olegk\\Desktop\\multimodal-hte-breast-cancer\\data\\derived\\verified_splits\\23_verified_repeated_fold_assignments.csv",
+    "sha256": "33e3151c01ae25a9e2ec6b35bff5678df6526fe885f16558f99bfb412d23dfea"
+  },
+  "supporting_tables": {
+    "event_definition": "C:\\Users\\olegk\\Desktop\\multimodal-hte-breast-cancer\\results\\tables\\20_event_definition_summary.csv",
+    "propensity_strategy": "C:\\Users\\olegk\\Desktop\\multimodal-hte-breast-cancer\\results\\tables\\21_propensity_strategy_summary.csv"
+  }
+}

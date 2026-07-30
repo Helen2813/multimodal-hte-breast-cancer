@@ -1,0 +1,33 @@
+{
+  "stage": 14,
+  "name": "CCW curve export, RMST decomposition, and bootstrap-weight stability",
+  "protocol_status": "CANDIDATE_V4_NOT_LOCKED",
+  "primary_design": {
+    "landmark_day": 180,
+    "diagnosis_time_end_day": 910
+  },
+  "expected_ccw": {
+    "source_n": 611,
+    "eligible_n": 594,
+    "clone_rows": 17235,
+    "rmst_initiate_by_180": 885.337268,
+    "rmst_no_initiation_by_180": 894.138657,
+    "survival_initiate_at_910": 0.908931,
+    "survival_no_initiation_at_910": 0.962645,
+    "effect_days": -8.801389
+  },
+  "curve_validation": {
+    "rmst_tolerance_days": 2.0,
+    "survival_tolerance": 0.015,
+    "effect_tolerance_days": 2.0
+  },
+  "bootstrap_weight_gate": {
+    "max_weight_warning": 10.0,
+    "fraction_repetitions_warning": 0.25,
+    "maximum_weight_critical": 20.0
+  },
+  "candidate_capture": {
+    "minimum_rows": 500,
+    "maximum_candidates_saved": 10
+  }
+}

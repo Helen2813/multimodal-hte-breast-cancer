@@ -1,0 +1,33 @@
+{
+  "stage": 13,
+  "name": "Estimand harmonization and bootstrap centering audit",
+  "protocol_status": "CANDIDATE_NOT_LOCKED",
+  "primary_design": {
+    "cohort": "outer_hormone_hrpos_her2neg",
+    "landmark_day": 180,
+    "post_landmark_horizon_days": 730,
+    "diagnosis_time_horizon_days": 910,
+    "landmark_target": "ATO overlap population among patients alive and uncensored at day 180",
+    "ccw_target": "Diagnosis-time dynamic-strategy population after exclusion of ambiguous treatment timing"
+  },
+  "expected_counts": {
+    "source_n": 611,
+    "ccw_eligible_n": 594,
+    "excluded_ambiguous": 17,
+    "early_initiators": 198,
+    "no_initiation_by_180": 396,
+    "landmark_n": 559,
+    "landmark_treated": 194,
+    "landmark_control": 365,
+    "landmark_events": 50
+  },
+  "expected_point_estimates": {
+    "landmark_rmst_difference_days": 28.773173,
+    "ccw_rmst_difference_days": -8.801389
+  },
+  "replication_tolerance_days": 0.05,
+  "centering_pilot_target_reps": 30,
+  "minimum_reps_for_centering_gate": 20,
+  "centering_z_threshold": 2.5,
+  "weight_warning_threshold": 10.0
+}

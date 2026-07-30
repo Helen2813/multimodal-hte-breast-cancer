@@ -1,0 +1,10 @@
+{
+  "paper": "A",
+  "primary_cohort": "outer_hormone_hrpos_her2neg",
+  "primary_treatment": "verified_hormone_therapy",
+  "primary_estimand": "five_year_RMST_difference_ATO",
+  "secondary_estimand": "five_year_survival_probability_difference_ATO",
+  "primary_adjustment": "compact_baseline_plus_diagnosis_year_if_available",
+  "sensitivity_adjustment": "full_baseline_elastic_net_overlap",
+  "confirmatory_status": "DRAFT_NOT_LOCKED"
+}

@@ -1,0 +1,51 @@
+{
+  "status": "CANDIDATE_V2_NOT_LOCKED",
+  "paper": "A",
+  "design_name": "180-day landmark with grace-period treatment strategies",
+  "target_population": "verified HR+/HER2-negative patients alive and uncensored at day 180 after diagnosis",
+  "strategies": {
+    "early_initiation": "initiate verified hormone therapy from diagnosis through day 180",
+    "no_initiation_by_landmark": "do not initiate through day 180; later initiation is permitted after the grace period"
+  },
+  "primary_estimand": "ATO 730-day post-landmark RMST difference among day-180 survivors",
+  "primary_effect_days": 28.77317349699449,
+  "diagnostic_ci": [
+    -33.49081818245449,
+    91.03716517644348
+  ],
+  "control_strategy_composition": {
+    "later_initiators": 177,
+    "no_recorded_later_initiation": 188,
+    "later_vs_never_max_abs_smd": 0.4496007980720282,
+    "later_initiation_prediction_auc": 0.6168710181512201
+  },
+  "era_interaction": "descriptive_only_due_to_sparse_event_cells",
+  "ccw_feasibility_status": "CCW_SENSITIVITY_FEASIBLE",
+  "ccw_plan": "A full clone-censor-weight analysis will be implemented as a diagnosis-time sensitivity analysis.",
+  "ai_claim": "In this TCGA application, boosted nuisance models produced less stable censoring weights and wider uncertainty; no general claim about AI methods is made.",
+  "identifiability_assumptions": [
+    "consistency of recorded initiation timing",
+    "conditional exchangeability of early-initiation strategies",
+    "positivity in the day-180 survivor population",
+    "conditional independent natural censoring",
+    "accurate receptor, event, and timing measurement",
+    "no interference",
+    "selection to the landmark population is part of the estimand",
+    "later initiation after day 180 is allowed under the no-initiation-by-day-180 strategy"
+  ],
+  "required_before_lock": [
+    "professor approval",
+    "full-pipeline patient bootstrap",
+    "CCW sensitivity implementation if feasible",
+    "final Table 1, love plot, and flow figure review",
+    "clinical contextualization against external evidence",
+    "frozen software/model registry and git tag"
+  ],
+  "protocol_status": "CANDIDATE_V3_NOT_LOCKED",
+  "stage13": {
+    "decision": "CENTERING_PASSED_EXPORT_CCW_CURVES_BEFORE_FULL_BOOTSTRAP",
+    "landmark_and_ccw_are_distinct_estimands": true,
+    "full_bootstrap_locked": false,
+    "ccw_curve_export_required": true
+  }
+}
