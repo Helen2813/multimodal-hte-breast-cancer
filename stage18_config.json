@@ -1,0 +1,33 @@
+{
+  "stage": 18,
+  "protocol_status": "CANDIDATE_V8_BOOTSTRAP_PILOT_NOT_LOCKED",
+  "design_amendment": {
+    "stage17_failed_gate": "original_fold_loo_spread_reduction_fraction",
+    "interpretation": "Leave-one-original-fold-out sensitivity measures patient-composition uncertainty after deleting about one fifth of the cohort. Repeated cross-fitting is not expected to eliminate this source of variation; a patient-level bootstrap is the appropriate next diagnostic.",
+    "full_publication_bootstrap_remains_locked": true
+  },
+  "bootstrap_pilot": {
+    "n_repetitions": 30,
+    "base_seed": 18000,
+    "n_crossfit_partitions": 5,
+    "crossfit_partition_seeds": [18101, 18102, 18103, 18104, 18105],
+    "n_folds": 5,
+    "primary_g_min": 0.10,
+    "horizon_days": 730.0,
+    "interval_days": 90.0,
+    "propensity_specification": "refitted_exact_stage30_specification",
+    "outcome_model": "arm_specific_ridge_bounded_0_to_horizon",
+    "sampling": "ordinary_patient_bootstrap_with_replacement",
+    "duplicate_fold_rule": "all bootstrap copies of the same original patient remain in the same nuisance fold",
+    "maximum_partition_retries": 20
+  },
+  "decision_thresholds": {
+    "minimum_successful_repetitions": 27,
+    "minimum_success_rate": 0.90,
+    "maximum_median_within_bootstrap_partition_sd_days": 15.0,
+    "maximum_p95_within_bootstrap_partition_sd_days": 30.0,
+    "maximum_prefix_20_vs_30_mean_shift_days": 15.0,
+    "numerical_explosion_abs_effect_days": 730.0,
+    "maximum_numerical_explosion_fraction": 0.05
+  }
+}

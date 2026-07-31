@@ -1,0 +1,37 @@
+{
+  "stage": 16,
+  "name": "Landmark outcome-augmentation and nuisance-model audit",
+  "protocol_status": "CANDIDATE_V6_NOT_LOCKED",
+  "design": {
+    "cohort": "outer_hormone_hrpos_her2neg",
+    "landmark_day": 180,
+    "post_landmark_horizon_days": 730,
+    "expected_n": 559,
+    "expected_treated": 194,
+    "expected_control": 365,
+    "expected_events": 50,
+    "expected_features": 13,
+    "expected_landmark_aipw_days": 28.773173,
+    "replication_tolerance_days": 0.05
+  },
+  "outcome_models": [
+    "arm_mean",
+    "arm_ridge_unbounded",
+    "arm_ridge_bounded",
+    "pooled_interaction_ridge_bounded",
+    "arm_hist_gradient_boosting_bounded"
+  ],
+  "fixed_hgb_parameters": {
+    "learning_rate": 0.05,
+    "max_iter": 120,
+    "max_leaf_nodes": 7,
+    "min_samples_leaf": 20,
+    "l2_regularization": 1.0
+  },
+  "decision_thresholds": {
+    "model_effect_spread_warning_days": 30.0,
+    "leave_one_fold_out_spread_warning_days": 30.0,
+    "bounded_ridge_shift_warning_days": 10.0,
+    "outside_prediction_fraction_warning": 0.01
+  }
+}

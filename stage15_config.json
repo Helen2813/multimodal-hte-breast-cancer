@@ -1,0 +1,26 @@
+{
+  "stage": 15,
+  "name": "Common-target estimator bridge and re-estimated CCW truncation",
+  "protocol_status": "CANDIDATE_V5_NOT_LOCKED",
+  "design": {
+    "landmark_day": 180,
+    "post_landmark_horizon_days": 730,
+    "diagnosis_time_end_day": 910,
+    "expected_landmark_n": 559,
+    "expected_landmark_aipw_days": 28.773173
+  },
+  "bridge": {
+    "minimum_patient_id_jaccard": 0.80,
+    "minimum_propensity_unique_values": 20
+  },
+  "truncation_bootstrap": {
+    "target_reps": 30,
+    "strategies": [
+      {"name": "cap_5", "type": "fixed", "value": 5.0},
+      {"name": "cap_10", "type": "fixed", "value": 10.0},
+      {"name": "cap_empirical_p99", "type": "quantile", "value": 0.99}
+    ],
+    "direction_stability_threshold": 0.80,
+    "mean_shift_warning_days": 10.0
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "status": "FIXED_SENSITIVITY_REGISTRY_NOT_FOR_MODEL_SELECTION",
+  "models": [
+    "arm_mean",
+    "arm_ridge_unbounded",
+    "arm_ridge_bounded",
+    "pooled_interaction_ridge_bounded",
+    "arm_hist_gradient_boosting_bounded"
+  ],
+  "hgb_parameters": {
+    "learning_rate": 0.05,
+    "max_iter": 120,
+    "max_leaf_nodes": 7,
+    "min_samples_leaf": 20,
+    "l2_regularization": 1.0
+  },
+  "common_elements": [
+    "same 559 patients",
+    "same repeat-1 outer folds",
+    "same frozen propensity scores",
+    "same censoring model",
+    "same IPCW-RMST pseudo-outcomes",
+    "same ATO AIPW formula"
+  ]
+}

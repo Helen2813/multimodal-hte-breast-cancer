@@ -1,0 +1,37 @@
+{
+  "stage": 18,
+  "protocol_status": "CANDIDATE_V8_BOOTSTRAP_PILOT_NOT_LOCKED",
+  "bootstrap_pilot": {
+    "n_repetitions": 30,
+    "base_seed": 18000,
+    "n_crossfit_partitions": 5,
+    "crossfit_partition_seeds": [
+      18101,
+      18102,
+      18103,
+      18104,
+      18105
+    ],
+    "n_folds": 5,
+    "primary_g_min": 0.1,
+    "horizon_days": 730.0,
+    "interval_days": 90.0,
+    "propensity_specification": "refitted_exact_stage30_specification",
+    "outcome_model": "arm_specific_ridge_bounded_0_to_horizon",
+    "sampling": "ordinary_patient_bootstrap_with_replacement",
+    "duplicate_fold_rule": "all bootstrap copies of the same original patient remain in the same nuisance fold",
+    "maximum_partition_retries": 20
+  },
+  "input_hashes": {
+    "stage18_config": "fcc2cc0e60a1a9e3d0787e5609cd7df9193839721247d0c4c7f9918b0d6722e7",
+    "stage18_utils": "7c10d4a197a799190cc1ed6bd3bc295533ceee0a8f5a070a5b4e03e6d01f1d21",
+    "stage18_preflight": "21c5a160879cf7ddc3ccc39af017ceefc41dd7b29255ae0705d50092500bfa9a",
+    "stage18_bootstrap": "e5c52d743acd8dbffc323cc3ecdd2cc5bcce0eb84e6474a1f232175228d61ec9",
+    "stage18_summary": "080e67286c8d31c67b4dc4549ec3f72f7f70cb1b4287faac56a76586c1443525",
+    "stage18_decision": "16ccead27c856c9ac827e5a9db13fd5f40c77bb7cbf8fbb1f9219354a0530a5d",
+    "stage12_utils": "940a156cb13aa353eeeff4143816ac87d9a8c288d5cf52b7c58d7617942e73ee",
+    "stage16_utils": "eda398d429389c3cc3e045a35c1bf9bf599930ed7f84463c173933f48725fbad",
+    "stage17_decision": "47f05e5cfc023d596c175ec168102f4eab7007ddc8929e2b0a303182cbe7032b",
+    "stage17_checks": "d0e0ea69220b26a300486f6b54aaf74e0c473556cfa4856cfc3d9c9a36550885"
+  }
+}

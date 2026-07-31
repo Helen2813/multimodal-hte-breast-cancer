@@ -1,0 +1,52 @@
+{
+  "stage": 17,
+  "name": "Repeated cross-fitting, influence, and censoring-tail stability audit",
+  "protocol_status": "CANDIDATE_V7_NOT_LOCKED",
+  "design": {
+    "cohort": "outer_hormone_hrpos_her2neg",
+    "landmark_day": 180,
+    "post_landmark_horizon_days": 730,
+    "expected_n": 559,
+    "expected_treated": 194,
+    "expected_control": 365,
+    "expected_events": 50,
+    "expected_features": 13,
+    "expected_exact_aipw_days": 28.773173,
+    "expected_bounded_ridge_aipw_days": 29.890478,
+    "replication_tolerance_days": 0.05,
+    "original_stage16_bounded_loo_spread_days": 88.433951
+  },
+  "repeated_crossfit": {
+    "n_repeats": 30,
+    "n_folds": 5,
+    "base_seed": 17000,
+    "g_min_values": [0.05, 0.10, 0.15, 0.20],
+    "primary_g_min": 0.10,
+    "propensity_tracks": [
+      "frozen_stage30",
+      "refitted_stage30_specification"
+    ],
+    "primary_propensity_track": "refitted_stage30_specification",
+    "outcome_model": "arm_specific_ridge",
+    "primary_prediction_constraint": "bounded_0_to_horizon",
+    "sensitivity_prediction_constraint": "unbounded",
+    "aggregation_prefixes": [1, 3, 5, 10, 20, 30],
+    "aggregation_block_size": 5
+  },
+  "decision_thresholds": {
+    "minimum_fraction_positive_repeats": 0.80,
+    "maximum_between_split_sd_days": 30.0,
+    "maximum_between_split_range_days": 100.0,
+    "maximum_abs_prefix_20_vs_30_shift_days": 10.0,
+    "maximum_abs_prefix_10_vs_30_shift_days": 15.0,
+    "maximum_gmin_mean_range_days": 20.0,
+    "maximum_abs_frozen_vs_refitted_aggregated_shift_days": 20.0,
+    "minimum_original_fold_loo_spread_reduction_fraction": 0.25
+  },
+  "logging": {
+    "print_all_summary_tables_to_terminal": true,
+    "print_every_repeat_checkpoint": true,
+    "print_patient_identifiers": false,
+    "single_transcript_file": true
+  }
+}

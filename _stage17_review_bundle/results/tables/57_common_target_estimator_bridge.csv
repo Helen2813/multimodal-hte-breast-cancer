@@ -1,0 +1,6 @@
+﻿analysis,target,adjustment,rmst_effect_days
+landmark_unweighted_km,observed landmark cohort,none,-1.040735450732086
+landmark_overlap_weighted_km,landmark ATO,frozen overlap weights,6.9064081684922485
+landmark_overlap_aipw,landmark ATO,overlap weights plus outcome augmentation,28.773173
+ccw_conditional_post180_original,diagnosis-time CCW survivors at day 180,clone/adherence weights,-6.729893755610988
+ccw_conditional_post180_multiplied_by_landmark_ato,landmark ATO bridge,clone/adherence weights x frozen overlap weights,-0.06594354490653132

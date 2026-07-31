@@ -1,0 +1,26 @@
+# Stage 16 preflight
+
+**Status:** `STAGE16_PREFLIGHT_PASSED`
+
+## Inputs
+
+| item | found | path | sha256 |
+| --- | --- | --- | --- |
+| stage15_decision | True | results\tables\59_stage15_decision.csv | b2e778b66887267fe3ce41b7fe664a1bc5da8142b3e565c20ff54af4b426d50f |
+| stage15_bridge | True | results\tables\57_common_target_estimator_bridge.csv | 7ffc723f9106730765d20743ba6d2d57bc29aa45b0c423fb3193726b077f519b |
+| stage15_bridge_diagnostics | True | results\tables\57_bridge_diagnostics.csv | 02d2ac003a1f7be88fc1ce9100f52b419cecc61cdf70fcae00e3a223ab08a50d |
+| stage12_utils | True | scripts\_stage12_utils.py | 940a156cb13aa353eeeff4143816ac87d9a8c288d5cf52b7c58d7617942e73ee |
+| stage41_script | True | scripts\41_replicate_estimators.py | e26fe2ccbfc9567f529fc40884b620e1c91339b7d9a4edb4bcb0f7819dc62869 |
+| landmark_cohort_sample_source | True | data\derived\stage14_trace\53_candidate_06.csv | a01d6cc3d9e932a68e4c2763f42d24c207ac095eba8b5e9ec1d434cae5f79a47 |
+
+## Exact reconstruction checks
+
+| check | observed | expected | pass |
+| --- | --- | --- | --- |
+| all_required_inputs | 6 | 6 | True |
+| landmark_n | 559 | 559 | True |
+| treated | 194 | 194 | True |
+| controls | 365 | 365 | True |
+| events | 50 | 50 | True |
+| compact_features | 13 | 13 | True |
+| exact_aipw_replication | 28.7732 | 28.7732 | True |

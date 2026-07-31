@@ -1,0 +1,46 @@
+{
+  "stage": 20,
+  "protocol_status_before_lock": "CANDIDATE_V9_PROTOCOL_LOCK_PENDING",
+  "protocol_status_after_lock": "PAPER_A_CANDIDATE_V9_LOCKED",
+  "disclosure": "Prospectively locked final analysis following exploratory protocol development on the same data.",
+  "final_estimator": {
+    "cohort": "outer_hormone_hrpos_her2neg",
+    "eligibility": "verified HR-positive/HER2-negative day-180 landmark survivors",
+    "treatment_contrast": "hormone therapy initiation during days 0-180 versus no initiation by day 180",
+    "estimand": "ATO difference in 730-day post-landmark restricted mean survival time, initiation minus no initiation",
+    "landmark_day": 180,
+    "horizon_days": 730.0,
+    "interval_days": 90.0,
+    "expected_n": 559,
+    "expected_treated": 194,
+    "expected_control": 365,
+    "expected_events": 50,
+    "expected_features": 13,
+    "n_folds": 5,
+    "primary_g_min": 0.10,
+    "propensity_specification": "cross-fitted refitted exact Stage 30 regularized specification",
+    "censoring_model": "cross-fitted discrete-time regularized logistic censoring model",
+    "outcome_model": "cross-fitted arm-specific ridge regression on the IPCW-RMST pseudo-outcome, bounded to [0, 730] days",
+    "aggregation": "patient-level repeated-score aggregation across 20 nuisance partitions",
+    "partition_base_seeds": [18101, 18102, 18103, 18104, 18105, 18106, 18107, 18108, 18109, 18110, 18111, 18112, 18113, 18114, 18115, 18116, 18117, 18118, 18119, 18120],
+    "maximum_partition_retries": 20
+  },
+  "publication_bootstrap": {
+    "n_repetitions": 300,
+    "bootstrap_base_seed": 21000,
+    "sampling": "ordinary patient bootstrap with replacement",
+    "duplicate_fold_rule": "all bootstrap copies of the same original patient remain in the same nuisance fold",
+    "n_crossfit_partitions": 20,
+    "partition_base_seeds": [18101, 18102, 18103, 18104, 18105, 18106, 18107, 18108, 18109, 18110, 18111, 18112, 18113, 18114, 18115, 18116, 18117, 18118, 18119, 18120],
+    "primary_interval": "95% percentile patient-bootstrap interval",
+    "sensitivity_intervals": ["95% basic patient-bootstrap interval", "95% studentized patient-bootstrap interval"],
+    "checkpoint_unit": "one nuisance partition",
+    "result_review_rule": "the estimator, seeds, models, truncation, horizon, and interval definitions may not be modified after inspecting the publication-bootstrap distribution"
+  },
+  "lock_requirements": {
+    "required_stage19_decision": "INNER_CROSSFIT_STABILIZED_PREPARE_CANDIDATE_V9_PROTOCOL_LOCK",
+    "required_stage19_authorization": true,
+    "required_stage19_gate_pass_fraction": 1.0,
+    "refuse_overwrite_existing_final_protocol": true
+  }
+}

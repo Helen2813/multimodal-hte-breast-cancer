@@ -1,0 +1,66 @@
+{
+  "stage": 19,
+  "protocol_status": "CANDIDATE_V9_INNER_CROSSFIT_STABILIZATION_NOT_LOCKED",
+  "extension": {
+    "stage18_existing_partitions": 5,
+    "target_total_partitions": 20,
+    "new_partition_numbers": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "new_partition_base_seeds": [
+      18106,
+      18107,
+      18108,
+      18109,
+      18110,
+      18111,
+      18112,
+      18113,
+      18114,
+      18115,
+      18116,
+      18117,
+      18118,
+      18119,
+      18120
+    ],
+    "n_folds": 5,
+    "primary_g_min": 0.1,
+    "horizon_days": 730.0,
+    "interval_days": 90.0,
+    "maximum_partition_retries": 20,
+    "bootstrap_base_seed": 18000,
+    "bootstrap_repetitions": 30,
+    "aggregation_prefixes": [
+      5,
+      10,
+      15,
+      20
+    ]
+  },
+  "input_hashes": {
+    "stage19_config": "2977a1caf81fa99f5f5860d0c52cb5a5c621baddfdf9d7380b5d4ff2ae926a3a",
+    "stage19_utils": "56205f2450a441aa1363124236471b2db4febfb73f41f517b21697e5c05f757f",
+    "stage19_preflight": "176df785a32474f4c260ff6f845ff6c99c415c2a1878fe7311e0b6398932237a",
+    "stage19_extension": "b9be8a55371d34431ec468879bae82ff907e995c92b8b859b41da013b3326233",
+    "stage19_summary": "836dd3a7cef4fe0fa46ec802ab55c5bfe43bb2da762e8e93699bc8f5892dacea",
+    "stage19_decision": "046ecc1f70235a94de716cf57fb26847e3ce18bc3c747b431cbe9696520b2e04",
+    "stage18_config": "fcc2cc0e60a1a9e3d0787e5609cd7df9193839721247d0c4c7f9918b0d6722e7",
+    "stage18_repetitions": "20c4c096e0fb9768a1b7a6d41c3dbdecda3984fc4f99a67832659b04736a381f",
+    "stage18_partitions": "d862cb84f27126fb84eb251fcd964b4ad4344b8f14ded1ec789a0e57b1521bd8"
+  }
+}
