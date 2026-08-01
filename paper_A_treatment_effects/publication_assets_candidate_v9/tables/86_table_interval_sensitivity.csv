@@ -1,0 +1,5 @@
+Interval,Low (days),High (days),Includes zero,Role
+Percentile patient bootstrap (primary),-4.173790684046189,91.00957428354695,True,Primary inference
+Basic patient bootstrap,-45.10700594153756,50.076359026055584,True,Sensitivity
+Studentized patient bootstrap,-23.636933669258216,47.95538881474723,True,Sensitivity
+Influence-function diagnostic,-38.08224126810423,83.98480961011363,True,Diagnostic only

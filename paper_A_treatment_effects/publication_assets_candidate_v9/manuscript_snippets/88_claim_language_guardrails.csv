@@ -1,0 +1,6 @@
+Use,Approved wording
+Primary numerical result,ATO RMST contrast 22.95 days; 95% percentile CI -4.17 to 91.01 days.
+Directional wording,The point estimate and 95.7% of bootstrap repetitions were positive.
+Uncertainty wording,The primary interval included zero; the magnitude was statistically imprecise.
+Causal boundary,Observational overlap-population contrast; residual confounding and treatment-timing misclassification remain possible.
+Prohibited wording,"Do not write statistically significant, proven benefit, confirmed efficacy, or protective effect established."

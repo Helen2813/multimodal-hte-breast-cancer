@@ -1,0 +1,21 @@
+{
+  "raw_dir": "data/raw/metabric",
+  "outputs_dir": "results/tables/metabric_m1",
+  "expected_files": {
+    "clinical_patient": "data_clinical_patient.txt",
+    "clinical_sample": "data_clinical_sample.txt",
+    "cna": "data_cna.txt",
+    "gene_panel": "data_gene_panel_matrix.txt",
+    "methylation": "data_methylation_promoters_rrbs.txt",
+    "mrna_raw": "data_mrna_illumina_microarray.txt",
+    "mrna_zscores": "data_mrna_illumina_microarray_zscores_ref_diploid_samples.txt",
+    "mutations": "data_mutations.txt",
+    "rna_cleaned": "metabric_rna_cleaned.csv"
+  },
+  "target_landmark_days": 180,
+  "target_post_landmark_horizon_days": 730,
+  "minimum_group_n_for_future_modeling": 50,
+  "minimum_group_events_for_future_modeling": 10,
+  "quick_fingerprint_bytes": 1048576,
+  "print_unique_examples_per_column": 8
+}

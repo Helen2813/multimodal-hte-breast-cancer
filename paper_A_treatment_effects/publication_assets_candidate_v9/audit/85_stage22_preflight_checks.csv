@@ -1,0 +1,16 @@
+check,observed,expected,pass
+bootstrap_repetition_rows,300,300,True
+unique_bootstrap_repetitions,300,300,True
+finite_bootstrap_effects,300,300,True
+partition_fit_rows,6000,6000,True
+persistent_error_rows,0,0,True
+protocol_status,PAPER_A_CANDIDATE_V9_ANALYSIS_COMPLETE,PAPER_A_CANDIDATE_V9_ANALYSIS_COMPLETE,True
+stage21_decision,FULL_BOOTSTRAP_COMPLETE_DIRECTION_IMPRECISE,FULL_BOOTSTRAP_COMPLETE_DIRECTION_IMPRECISE,True
+recomputed_bootstrap_mean_days,37.63688660399601,37.63688660399601,True
+recomputed_bootstrap_median_days,36.255811367131926,36.255811367131926,True
+recomputed_bootstrap_sd_days,23.029414604861714,23.029414604861717,True
+recomputed_percentile_ci_low_days,-4.173790684046189,-4.173790684046189,True
+recomputed_percentile_ci_high_days,91.00957428354695,91.00957428354695,True
+recomputed_fraction_positive,0.9566666666666667,0.9566666666666668,True
+locked_point_matches_summary,22.951284171004698,22.951284171004698,True
+locked_manifest_hashes,35,35,True

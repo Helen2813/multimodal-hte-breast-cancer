@@ -1,0 +1,29 @@
+\begin{table}[htbp]
+\centering
+\caption{Design, target-population, and outcome-model sensitivity analyses.}
+\label{tab:design_model_sensitivity}
+\small
+\begin{tabular}{lrrrrr}
+\toprule
+estimand\_family & analysis & estimate\_days & interval\_low\_days & interval\_high\_days & target\_or\_note \\
+\midrule
+Design bridge & landmark\_unweighted\_km & -1.04 &  &  & observed landmark cohort | none \\
+Design bridge & landmark\_overlap\_weighted\_km & 6.91 &  &  & landmark ATO | frozen overlap weights \\
+Design bridge & landmark\_overlap\_aipw & 28.77 &  &  & landmark ATO | overlap weights plus outcome augmentation \\
+Design bridge & ccw\_conditional\_post180\_original & -6.73 &  &  & diagnosis-time CCW survivors at day 180 | clone/adherence weights \\
+Design bridge & ccw\_conditional\_post180\_multiplied\_by\_landmark\_ato & -0.07 &  &  & landmark ATO bridge | clone/adherence weights x frozen overlap weights \\
+Landmark ATO, same IPCW pseudo-outcome & Direct ATO-IPW & 26.51 &  &  & Anchor without outcome augmentation \\
+Landmark ATO-AIPW outcome-model sensitivity & arm\_mean & 25.97 &  &  & Same cohort, folds, propensity, censoring, and pseudo-outcome \\
+Landmark ATO-AIPW outcome-model sensitivity & arm\_ridge\_unbounded & 28.77 &  &  & Same cohort, folds, propensity, censoring, and pseudo-outcome \\
+Landmark ATO-AIPW outcome-model sensitivity & arm\_ridge\_bounded & 29.89 &  &  & Same cohort, folds, propensity, censoring, and pseudo-outcome \\
+Landmark ATO-AIPW outcome-model sensitivity & pooled\_interaction\_ridge\_bounded & 31.90 &  &  & Same cohort, folds, propensity, censoring, and pseudo-outcome \\
+Landmark ATO-AIPW outcome-model sensitivity & arm\_hist\_gradient\_boosting\_bounded & 27.92 &  &  & Same cohort, folds, propensity, censoring, and pseudo-outcome \\
+Locked primary analysis & Candidate V9, 20-partition repeated-score ATO-AIPW & 22.95 & -4.17 & 91.01 & Primary 95\% patient-bootstrap percentile interval \\
+Diagnosis-time CCW sensitivity (not directly comparable) & original\_uncapped & -7.11 & -28.05 & 7.09 & Different time zero and adherence/censoring estimand \\
+Diagnosis-time CCW sensitivity (not directly comparable) & cap\_5 & -7.00 & -25.41 & 6.68 & Different time zero and adherence/censoring estimand \\
+Diagnosis-time CCW sensitivity (not directly comparable) & cap\_10 & -7.44 & -29.32 & 6.81 & Different time zero and adherence/censoring estimand \\
+Diagnosis-time CCW sensitivity (not directly comparable) & cap\_empirical\_p99 & -3.79 & -19.46 & 6.57 & Different time zero and adherence/censoring estimand \\
+\bottomrule
+\end{tabular}
+\par\vspace{2pt}{\footnotesize Rows from the diagnosis-time clone-censor-weight analysis use a different time zero and estimand and are not direct numerical replications of the landmark ATO result.}
+\end{table}

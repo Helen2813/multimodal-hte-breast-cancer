@@ -1,0 +1,24 @@
+{
+  "protocol_id": "PAPER_A_CANDIDATE_V9_9F1E8E368C92EC02",
+  "expected_bootstrap_repetitions": 300,
+  "expected_partitions_per_bootstrap": 20,
+  "primary_interval": "percentile",
+  "prefix_repetitions": [50, 100, 200, 300],
+  "output_directory": "paper_A_treatment_effects/publication_assets_candidate_v9",
+  "figure_dpi": 300,
+  "recompute_tolerance": 1e-6,
+  "stale_numeric_tokens": [
+    "28.773173",
+    "27.731760",
+    "39.508207",
+    "39.548570",
+    "46.116422"
+  ],
+  "stale_claim_patterns": [
+    "statistically significant",
+    "demonstrates treatment efficacy",
+    "proves treatment benefit",
+    "protective effect was confirmed",
+    "causal benefit was established"
+  ]
+}

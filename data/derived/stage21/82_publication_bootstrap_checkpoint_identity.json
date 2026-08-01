@@ -1,0 +1,65 @@
+{
+  "stage": 21,
+  "protocol_status": "PAPER_A_CANDIDATE_V9_LOCKED",
+  "full_bootstrap": {
+    "n_repetitions": 300,
+    "bootstrap_base_seed": 21000,
+    "n_crossfit_partitions": 20,
+    "partition_base_seeds": [
+      18101,
+      18102,
+      18103,
+      18104,
+      18105,
+      18106,
+      18107,
+      18108,
+      18109,
+      18110,
+      18111,
+      18112,
+      18113,
+      18114,
+      18115,
+      18116,
+      18117,
+      18118,
+      18119,
+      18120
+    ],
+    "n_folds": 5,
+    "primary_g_min": 0.1,
+    "horizon_days": 730.0,
+    "interval_days": 90.0,
+    "maximum_partition_retries": 20,
+    "sampling": "ordinary_patient_bootstrap_with_replacement",
+    "duplicate_fold_rule": "all bootstrap copies of the same original patient remain in the same nuisance fold",
+    "propensity_specification": "refitted_exact_stage30_specification",
+    "censoring_model": "crossfitted_discrete_time_regularized_logistic",
+    "outcome_model": "arm_specific_ridge_bounded_0_to_horizon",
+    "aggregation": "patient_level_repeated_score_across_20_partitions"
+  },
+  "inference": {
+    "confidence_level": 0.95,
+    "primary_interval": "percentile",
+    "sensitivity_intervals": [
+      "basic",
+      "studentized"
+    ],
+    "prefixes": [
+      50,
+      100,
+      200,
+      300
+    ]
+  },
+  "input_hashes": {
+    "lock_manifest": "16ada8f3d155fde21b12bd2c1655e16c785903e6433eab60236b0068792d58a2",
+    "stage21_config": "aa796c89f582d93a2c701c6022b5a5b859f40b02906aa40330f0964c2e48c03b",
+    "stage21_utils": "c66d19661285c79b313acbb55c1de0964c791b5fa2c2e682c93c1df8d0c458ed",
+    "stage21_bootstrap": "8e71f7698b4da90ada87bcc622d4f962cf573f85ef99f68d065994ea500cb802",
+    "stage21_summary": "1a45eba93732aac673826a23f11dbbd3649622457216f1563f6eaaaa531accf6",
+    "stage21_decision": "2ab10023184dc58f1c3a264f039af808f5c47812bfe06f1802e2ef7c3b105124",
+    "final_point": "22a4d01bfcc5fa94d12c1774cbfca548fab70b7b1bcae585ef3a5f92cd0e5057"
+  }
+}

@@ -1,0 +1,20 @@
+\begin{table}[htbp]
+\centering
+\caption{Computational completion and Monte Carlo diagnostics.}
+\label{tab:computational_reproducibility}
+\small
+\begin{tabular}{lrrr}
+\toprule
+Metric & Observed & Target/threshold & Status \\
+\midrule
+Successful patient-bootstrap repetitions & 300.000 & 300 & Pass \\
+Persistent failed repetitions & 0.000 & 0 & Pass \\
+Completed nuisance-partition fits & 6000.000 & 6000 & Pass \\
+Numerical explosion fraction & 0.000 & <=0.02 & Pass \\
+Median inner-partition MCSE (days) & 4.158 & descriptive & Reported \\
+P95 inner-partition MCSE (days) & 6.980 & descriptive & Reported \\
+Prefix 200-to-300 mean shift (days) & 1.467 & <=5 & Pass \\
+\bottomrule
+\end{tabular}
+\par\vspace{2pt}{\footnotesize The estimator and bootstrap configuration were cryptographically locked before the 300-repetition analysis.}
+\end{table}

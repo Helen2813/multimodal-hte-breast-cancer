@@ -1,0 +1,29 @@
+{
+  "raw_dir": "data/raw/metabric",
+  "m1_dir": "results/tables/metabric_m1",
+  "output_dir": "results/tables/metabric_m2",
+  "files": {
+    "clinical_patient": "data_clinical_patient.txt",
+    "clinical_sample": "data_clinical_sample.txt",
+    "mrna_raw": "data_mrna_illumina_microarray.txt",
+    "mrna_zscores": "data_mrna_illumina_microarray_zscores_ref_diploid_samples.txt",
+    "cna": "data_cna.txt",
+    "methylation": "data_methylation_promoters_rrbs.txt",
+    "gene_panel": "data_gene_panel_matrix.txt",
+    "mutations": "data_mutations.txt",
+    "rna_cleaned": "metabric_rna_cleaned.csv"
+  },
+  "rna_provenance": {
+    "sample_count": 25,
+    "gene_count": 25,
+    "minimum_pairs": 100,
+    "correlation_pass": 0.995,
+    "median_absolute_difference_pass": 1e-06
+  },
+  "transport_readiness": {
+    "minimum_hrpos_her2neg_with_rna": 500,
+    "minimum_hrpos_her2neg_with_cna": 500,
+    "minimum_hrpos_her2neg_with_mutations": 300,
+    "minimum_hrpos_her2neg_complete_rna_cna_mutations": 250
+  }
+}

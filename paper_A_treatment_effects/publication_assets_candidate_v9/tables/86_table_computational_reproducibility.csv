@@ -1,0 +1,8 @@
+Metric,Observed,Target/threshold,Status
+Successful patient-bootstrap repetitions,300.0,300,Pass
+Persistent failed repetitions,0.0,0,Pass
+Completed nuisance-partition fits,6000.0,6000,Pass
+Numerical explosion fraction,0.0,<=0.02,Pass
+Median inner-partition MCSE (days),4.15761260648241,descriptive,Reported
+P95 inner-partition MCSE (days),6.980486699073242,descriptive,Reported
+Prefix 200-to-300 mean shift (days),1.4667374176720855,<=5,Pass

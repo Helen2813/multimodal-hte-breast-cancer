@@ -1,0 +1,17 @@
+estimand_family,analysis,estimate_days,interval_low_days,interval_high_days,target_or_note
+Design bridge,landmark_unweighted_km,-1.040735450732086,,,observed landmark cohort | none
+Design bridge,landmark_overlap_weighted_km,6.9064081684922485,,,landmark ATO | frozen overlap weights
+Design bridge,landmark_overlap_aipw,28.773173,,,landmark ATO | overlap weights plus outcome augmentation
+Design bridge,ccw_conditional_post180_original,-6.729893755610988,,,diagnosis-time CCW survivors at day 180 | clone/adherence weights
+Design bridge,ccw_conditional_post180_multiplied_by_landmark_ato,-0.0659435449065313,,,landmark ATO bridge | clone/adherence weights x frozen overlap weights
+"Landmark ATO, same IPCW pseudo-outcome",Direct ATO-IPW,26.51119211639161,,,Anchor without outcome augmentation
+Landmark ATO-AIPW outcome-model sensitivity,arm_mean,25.974046077786586,,,"Same cohort, folds, propensity, censoring, and pseudo-outcome"
+Landmark ATO-AIPW outcome-model sensitivity,arm_ridge_unbounded,28.77317349699449,,,"Same cohort, folds, propensity, censoring, and pseudo-outcome"
+Landmark ATO-AIPW outcome-model sensitivity,arm_ridge_bounded,29.890478297925743,,,"Same cohort, folds, propensity, censoring, and pseudo-outcome"
+Landmark ATO-AIPW outcome-model sensitivity,pooled_interaction_ridge_bounded,31.899105344900867,,,"Same cohort, folds, propensity, censoring, and pseudo-outcome"
+Landmark ATO-AIPW outcome-model sensitivity,arm_hist_gradient_boosting_bounded,27.91580208314234,,,"Same cohort, folds, propensity, censoring, and pseudo-outcome"
+Locked primary analysis,"Candidate V9, 20-partition repeated-score ATO-AIPW",22.951284171004698,-4.173790684046189,91.00957428354695,Primary 95% patient-bootstrap percentile interval
+Diagnosis-time CCW sensitivity (not directly comparable),original_uncapped,-7.105401023247422,-28.05309687248246,7.085928216269047,Different time zero and adherence/censoring estimand
+Diagnosis-time CCW sensitivity (not directly comparable),cap_5,-7.003493277299374,-25.40733970151918,6.6794008663356585,Different time zero and adherence/censoring estimand
+Diagnosis-time CCW sensitivity (not directly comparable),cap_10,-7.440531900042171,-29.32494915061381,6.814163554273595,Different time zero and adherence/censoring estimand
+Diagnosis-time CCW sensitivity (not directly comparable),cap_empirical_p99,-3.792903046447191,-19.46326475065009,6.5706149732350365,Different time zero and adherence/censoring estimand

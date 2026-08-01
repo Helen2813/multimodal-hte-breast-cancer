@@ -1,0 +1,9 @@
+PROTOCOL LOCKED
+Protocol ID: PAPER_A_CANDIDATE_V9_9F1E8E368C92EC02
+Status: PAPER_A_CANDIDATE_V9_LOCKED
+Created UTC: 2026-07-31T23:42:03.373003+00:00
+
+Do not edit any file listed in:
+data\derived\manifests\80_candidate_v9_protocol_lock_manifest.json
+
+Run the integrity checker before and during the publication bootstrap.
