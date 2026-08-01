@@ -1,0 +1,45 @@
+{
+  "metabric_raw_dir": "data/raw/metabric",
+  "metabric_m2_dir": "results/tables/metabric_m2",
+  "output_dir": "results/tables/metabric_m3",
+  "search_roots": [
+    "data",
+    "results"
+  ],
+  "exclude_path_tokens": [
+    ".git",
+    ".venv",
+    "__pycache__",
+    "data/raw/metabric",
+    "results/logs",
+    "publication_assets_candidate_v9"
+  ],
+  "candidate_extensions": [
+    ".csv",
+    ".tsv",
+    ".txt",
+    ".parquet",
+    ".feather",
+    ".gmt"
+  ],
+  "maximum_candidate_file_size_gb": 5.0,
+  "top_candidates_per_modality": 20,
+  "header_read_bytes": 2097152,
+  "metabric_files": {
+    "rna": "data_mrna_illumina_microarray.txt",
+    "cna": "data_cna.txt",
+    "methylation": "data_methylation_promoters_rrbs.txt",
+    "mutations": "data_mutations.txt"
+  },
+  "required_tcga_modalities_for_m4": [
+    "clinical",
+    "rna",
+    "cna",
+    "mutations"
+  ],
+  "optional_tcga_modalities_for_m4": [
+    "methylation",
+    "annotation",
+    "pathway_gmt"
+  ]
+}

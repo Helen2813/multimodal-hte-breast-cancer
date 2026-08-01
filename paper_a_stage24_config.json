@@ -1,0 +1,25 @@
+{
+  "clinical_source": "data/processed/01_Clinical/clinical.tsv",
+  "candidate_v9_manifest": "data/derived/manifests/80_candidate_v9_protocol_lock_manifest.json",
+  "output_dir": "results/tables/stage24_chemo_sequencing",
+  "landmark_day": 180,
+  "expected_cohort": {"n": 559, "treated": 194, "control": 365, "events": 50},
+  "valid_timing": {"minimum_day": 0, "maximum_day": 10000},
+  "review_thresholds": {
+    "binary_smd_flag": 0.10,
+    "binary_smd_severe": 0.20,
+    "missingness_flag": 0.20,
+    "minimum_arm_for_sensitivity": 30,
+    "minimum_events_for_sensitivity": 20
+  },
+  "candidate_search_roots": [
+    "data/derived/landmark_cohorts",
+    "data/derived/verified_cohorts",
+    "data/derived/stage14_trace",
+    "paper_A_treatment_effects",
+    "results/tables"
+  ],
+  "candidate_name_tokens": [
+    "hormone", "landmark", "180", "candidate_v9", "outer_hormone_hrpos_her2neg"
+  ]
+}

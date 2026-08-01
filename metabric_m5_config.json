@@ -1,0 +1,54 @@
+{
+  "raw_dir": "data/raw/metabric",
+  "metabric_m2_dir": "results/tables/metabric_m2",
+  "metabric_m4_dir": "results/tables/metabric_m4",
+  "output_dir": "results/tables/metabric_m5",
+  "paper1_processed_root": "data/processed",
+  "tcga_canonical_table": "data/derived/cohorts/master_outer.csv",
+  "paper1_modalities": {
+    "CNV": "02_CNV",
+    "Methylation": "03_Methylation",
+    "Mutation": "05_Mutation",
+    "RNA": "07_RNA"
+  },
+  "metabric_files": {
+    "clinical_sample": "data_clinical_sample.txt",
+    "mutations": "data_mutations.txt",
+    "gene_panel_matrix": "data_gene_panel_matrix.txt"
+  },
+  "cbioportal": {
+    "panel_id": "METABRIC_173",
+    "panel_url": "https://www.cbioportal.org/api/gene-panels/METABRIC_173?projection=DETAILED",
+    "timeout_seconds": 60,
+    "max_retries": 4
+  },
+  "mapping_confidence": {
+    "primary_allowed": [
+      "MAPPED_CURRENT_AND_GRCH37_AGREE",
+      "MAPPED_CURRENT_ONLY",
+      "MAPPED_GRCH37_ONLY"
+    ],
+    "sensitivity_only": [
+      "MAPPED_BY_ENSEMBL_DISPLAY_NAME_FALLBACK"
+    ],
+    "excluded": [
+      "AMBIGUOUS_HGNC_SYMBOLS",
+      "AMBIGUOUS_DISPLAY_NAMES",
+      "UNMAPPED"
+    ]
+  },
+  "dual_track_protocol": {
+    "track_a_primary_modalities": [
+      "clinical",
+      "RNA",
+      "CNA"
+    ],
+    "track_a_mutation_role": "secondary_if_panel_recovered",
+    "track_a_methylation_role": "secondary_gene_promoter_harmonization_only",
+    "track_b_primary_outcome": "OS",
+    "track_b_sensitivity_outcome": "RFS",
+    "outer_folds": 5,
+    "outer_repeats": 20,
+    "bootstrap_repetitions": 1000
+  }
+}

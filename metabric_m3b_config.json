@@ -1,0 +1,27 @@
+{
+  "metabric_m3_dir": "results/tables/metabric_m3",
+  "output_dir": "results/tables/metabric_m3b",
+  "preferred_tcga_tables": [
+    "data/derived/cohorts/master_outer.csv",
+    "data/derived/cohorts/master_complete_case.csv",
+    "data/derived/cohorts/outer_hormone_hrpos_her2neg.csv",
+    "data/derived/verified_cohorts/outer_hormone_hrpos_her2neg_verified.csv"
+  ],
+  "prefixes": {
+    "clinical": ["CLIN_"],
+    "rna": ["RNA_"],
+    "cna": ["CNV_", "CNA_"],
+    "methylation": ["METH_"],
+    "protein": ["PROT_", "RPPA_"],
+    "mutations": ["MUT_"],
+    "pathway": ["PATH_", "GSVA_", "GSEA_"]
+  },
+  "search_roots": ["scripts", "data", "results"],
+  "search_extensions": [".py", ".ps1", ".json", ".yaml", ".yml", ".csv", ".tsv", ".txt", ".gmt"],
+  "mapping_path_tokens": ["annotation", "annot", "ensembl", "gencode", "biomart", "gene_map", "mapping", "hugo", "rna", "methyl", "cpg", "manifest", "audit"],
+  "excluded_path_tokens": [".git", ".venv", "__pycache__", "data/raw/metabric", "results/logs", "publication_assets_candidate_v9", "results/tables/metabric_m3b"],
+  "maximum_mapping_candidate_size_mb": 300,
+  "maximum_bytes_scanned_per_file": 52428800,
+  "minimum_direct_gene_overlap_to_proceed": 1,
+  "print_feature_examples": 20
+}

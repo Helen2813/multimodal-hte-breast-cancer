@@ -1,0 +1,57 @@
+{
+  "metabric_raw_dir": "data/raw/metabric",
+  "metabric_m2_dir": "results/tables/metabric_m2",
+  "metabric_m3b_dir": "results/tables/metabric_m3b",
+  "output_dir": "results/tables/metabric_m4",
+  "paper1_processed_root": "data/processed",
+  "tcga_canonical_table": "data/derived/cohorts/master_outer.csv",
+  "metabric_files": {
+    "clinical_sample": "data_clinical_sample.txt",
+    "rna_cleaned": "metabric_rna_cleaned.csv",
+    "cna": "data_cna.txt",
+    "mutations": "data_mutations.txt",
+    "gene_panel_matrix": "data_gene_panel_matrix.txt",
+    "meta_gene_panel_matrix": "meta_gene_panel_matrix.txt"
+  },
+  "ensembl_mapping": {
+    "current_server": "https://rest.ensembl.org",
+    "grch37_server": "https://grch37.rest.ensembl.org",
+    "species": "homo_sapiens",
+    "external_db": "HGNC",
+    "request_pause_seconds": 0.12,
+    "timeout_seconds": 30,
+    "max_retries": 4
+  },
+  "matrix_build": {
+    "cna_chunksize": 4000,
+    "duplicate_gene_aggregation": "median",
+    "minimum_nonmissing_fraction": 0.95,
+    "minimum_variance": 1e-12
+  },
+  "paper1_recipe_tokens": [
+    "IAMB",
+    "GSMB",
+    "MMMB",
+    "HITON",
+    "alpha",
+    "c-index",
+    "concordance",
+    "summary_all_results",
+    "consensus"
+  ],
+  "paper1_modalities_shared_with_metabric": [
+    "RNA",
+    "CNV",
+    "Methylation",
+    "Mutation"
+  ],
+  "independent_replication_protocol": {
+    "primary_outcome": "OS",
+    "sensitivity_outcome": "RFS",
+    "outer_folds": 5,
+    "outer_repeats": 20,
+    "selection_must_be_nested": true,
+    "feature_selection_must_use_training_fold_only": true,
+    "metabric_outcomes_must_not_influence_track_a_mapping": true
+  }
+}

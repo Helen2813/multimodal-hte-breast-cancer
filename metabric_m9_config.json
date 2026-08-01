@@ -1,0 +1,32 @@
+{
+  "metabric_m7_dir": "results/tables/metabric_m7",
+  "metabric_m8_dir": "results/tables/metabric_m8",
+  "output_dir": "results/tables/metabric_m9",
+  "figure_dir": "results/figures/metabric_m9",
+  "manuscript_dir": "paper_cross_cohort_transport",
+  "bootstrap": {
+    "repetitions": 2000,
+    "seed": 69001,
+    "five_year_months": 60.0
+  },
+  "files": {
+    "m8_protocol": "results/tables/metabric_m8/m40_m8_protocol.json",
+    "m8_report": "results/tables/metabric_m8/m44_m8_report.json",
+    "m8_modality_predictions": "results/tables/metabric_m8/m41_oof_predictions_LOCAL_ONLY.csv",
+    "m8_modality_selected": "results/tables/metabric_m8/m41_selected_features_checkpoint.csv",
+    "m8_modality_candidates": "results/tables/metabric_m8/m41_candidate_features_checkpoint.csv",
+    "m8_modality_universe": "results/tables/metabric_m8/m41_modality_feature_universe.csv",
+    "m8_modality_summary": "results/tables/metabric_m8/m41_modality_summary.csv",
+    "m8_gene_concordance": "results/tables/metabric_m8/m42_gene_concordance.csv",
+    "m8_pathway_concordance": "results/tables/metabric_m8/m43_pathway_concordance.csv",
+    "m7_combined_predictions": "results/tables/metabric_m7/m38_oof_predictions_LOCAL_ONLY.csv",
+    "m7_combined_selected": "results/tables/metabric_m7/m38_selected_features_checkpoint.csv",
+    "m7_combined_candidates": "results/tables/metabric_m7/m38_candidate_features_checkpoint.csv",
+    "m7_track_a_deltas": "results/tables/metabric_m7/m37_track_a_paired_delta_summary.csv",
+    "historical_methylation_selected": "data/processed/03_Methylation/mb_results/meth_7_top_correlated_200probes/IAMB_alpha0.05_genes.txt",
+    "methylation_annotation_candidates": [
+      "data/processed/03_Methylation/statistical_filtered/meth_7_top_correlated_annotated.csv",
+      "data/processed/03_Methylation/statistical_filtered/meth_statistics_complete.csv"
+    ]
+  }
+}

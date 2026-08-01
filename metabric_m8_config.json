@@ -1,0 +1,65 @@
+{
+  "metabric_m2_dir": "results/tables/metabric_m2",
+  "metabric_m4_dir": "results/tables/metabric_m4",
+  "metabric_m5_dir": "results/tables/metabric_m5",
+  "metabric_m7_dir": "results/tables/metabric_m7",
+  "output_dir": "results/tables/metabric_m8",
+  "figure_dir": "results/figures/metabric_m8",
+  "modality_analysis": {
+    "outer_repeats": 10,
+    "outer_folds": 5,
+    "repeat_seed_start": 68001,
+    "engine": "rank_gaussian_partial",
+    "cox_penalizer_sequence": [0.05, 0.2, 1.0],
+    "five_year_months": 60.0,
+    "top_positive": 100,
+    "top_negative": 100,
+    "mutation_frequency_threshold": 0.01,
+    "maximum_mutation_candidates": 200,
+    "maximum_iamb_selected": 120,
+    "fallback_features": 20,
+    "minimum_complete_n": {"RNA": 1500, "CNV": 1500, "Methylation": 1000, "Mutation": 1500},
+    "minimum_events": {"RNA": 700, "CNV": 700, "Methylation": 500, "Mutation": 700},
+    "historical_alpha": {"RNA": 0.05, "CNV": 0.1, "Methylation": 0.05, "Mutation": 0.05},
+    "clinical_features": ["age_at_diagnosis", "grade", "stage", "tumor_size", "positive_nodes", "er_status", "pr_status", "her2_status", "npi"],
+    "core_selection_frequency": 0.5,
+    "stable_folds_within_repeat": 3,
+    "minimum_stable_repeats": 5
+  },
+  "historical_selected_files": {
+    "RNA": "data/processed/07_RNA/mb_results/rna_7_top_correlated_200genes/IAMB_alpha0.05_genes.txt",
+    "CNV": "data/processed/02_CNV/mb_results/cnv_5_balanced_1130genes/IAMB_alpha0.1_genes.txt",
+    "Methylation": "data/processed/03_Methylation/mb_results/meth_7_top_correlated_200probes/IAMB_alpha0.05_genes.txt",
+    "Mutation": "data/processed/05_Mutation/mb_results/mut_7_top_correlated_200genes/IAMB_alpha0.05_genes.txt"
+  },
+  "methylation_annotation_candidates": [
+    "data/processed/03_Methylation/statistical_filtered/meth_7_top_correlated_annotated.csv",
+    "data/processed/03_Methylation/statistical_filtered/meth_statistics_complete.csv"
+  ],
+  "reactome": {
+    "url": "https://reactome.org/download/current/ReactomePathways.gmt.zip",
+    "minimum_pathway_size": 10,
+    "maximum_pathway_size": 500,
+    "minimum_selected_genes_for_enrichment": 5,
+    "top_pathways_for_concordance": 20,
+    "timeout_seconds": 90,
+    "max_retries": 4
+  },
+  "files": {
+    "clinical_master": "results/tables/metabric_m2/m06_metabric_clinical_master_LOCAL_ONLY.csv",
+    "rna_cleaned": "data/raw/metabric/metabric_rna_cleaned.csv",
+    "cna": "data/raw/metabric/data_cna.txt",
+    "methylation": "data/raw/metabric/data_methylation_promoters_rrbs.txt",
+    "gene_panel_matrix": "data/raw/metabric/data_gene_panel_matrix.txt",
+    "mutations": "data/raw/metabric/data_mutations.txt",
+    "metabric_173_genes": "results/tables/metabric_m5/m27_metabric_173_gene_list.csv",
+    "ensembl_mapping": "results/tables/metabric_m4/m21_ensembl_to_hgnc_mapping.csv",
+    "m7_protocol": "results/tables/metabric_m7/m36_m7_full_core_protocol.json",
+    "m7_track_a_results": "results/tables/metabric_m7/m37_track_a_full_results.csv",
+    "m7_track_a_deltas": "results/tables/metabric_m7/m37_track_a_paired_delta_summary.csv",
+    "m7_track_b_repeats": "results/tables/metabric_m7/m38_repeat_level_oof_results.csv",
+    "m7_track_b_summary": "results/tables/metabric_m7/m38_track_b_full_summary.json",
+    "m7_selection_frequency": "results/tables/metabric_m7/m38_selection_frequency.csv",
+    "m7_decision": "results/tables/metabric_m7/m39_m7_decision.csv"
+  }
+}

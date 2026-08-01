@@ -1,0 +1,108 @@
+{
+  "metabric_m2_dir": "results/tables/metabric_m2",
+  "metabric_m4_dir": "results/tables/metabric_m4",
+  "metabric_m5_dir": "results/tables/metabric_m5",
+  "output_dir": "results/tables/metabric_m6",
+  "raw_dir": "data/raw/metabric",
+  "tcga_canonical_table": "data/derived/cohorts/master_outer.csv",
+  "tcga_outcome_file": "data/processed/07_RNA/statistical_filtered/outcome.csv",
+  "historical_external_benchmark": {
+    "input_features": 525,
+    "rna_features": 200,
+    "mutation_features": 116,
+    "cna_features": 200,
+    "clinical_features": 9,
+    "algorithm": "IAMB",
+    "alpha": 0.2,
+    "selected_features": 87,
+    "c_index": 0.7197,
+    "auc_5y": 0.7639,
+    "cox_penalizer": 0.05
+  },
+  "historical_engine_validation": {
+    "minimum_mean_jaccard_to_call_reproduced": 0.5,
+    "minimum_per_modality_jaccard": 0.2,
+    "maximum_selected_before_padding": 120,
+    "padding_target": 50,
+    "engines": [
+      "pearson_partial",
+      "spearman_partial",
+      "rank_gaussian_partial"
+    ],
+    "configs": {
+      "RNA": {
+        "candidate": "data/processed/07_RNA/statistical_filtered/rna_7_top_correlated_200genes.csv",
+        "outcome": "data/processed/07_RNA/statistical_filtered/outcome.csv",
+        "selected": "data/processed/07_RNA/mb_results/rna_7_top_correlated_200genes/IAMB_alpha0.05_genes.txt",
+        "alpha": 0.05
+      },
+      "CNV": {
+        "candidate": "data/processed/02_CNV/statistical_filtered/cnv_5_balanced_1130genes.csv",
+        "outcome": "data/processed/02_CNV/statistical_filtered/outcome.csv",
+        "selected": "data/processed/02_CNV/mb_results/cnv_5_balanced_1130genes/IAMB_alpha0.1_genes.txt",
+        "alpha": 0.1
+      },
+      "Methylation": {
+        "candidate": "data/processed/03_Methylation/statistical_filtered/meth_7_top_correlated_200probes.csv",
+        "outcome": "data/processed/03_Methylation/statistical_filtered/outcome.csv",
+        "selected": "data/processed/03_Methylation/mb_results/meth_7_top_correlated_200probes/IAMB_alpha0.05_genes.txt",
+        "alpha": 0.05
+      },
+      "Mutation": {
+        "candidate": "data/processed/05_Mutation/statistical_filtered/mut_7_top_correlated_200genes.csv",
+        "outcome": "data/processed/05_Mutation/statistical_filtered/outcome.csv",
+        "selected": "data/processed/05_Mutation/mb_results/mut_7_top_correlated_200genes/IAMB_alpha0.05_genes.txt",
+        "alpha": 0.05
+      }
+    }
+  },
+  "track_a_pilot": {
+    "cox_penalizer": 0.05,
+    "bootstrap_repetitions": 200,
+    "bootstrap_seed": 62001,
+    "five_year_months": 60.0,
+    "minimum_tcga_alignment": 900,
+    "minimum_metabric_n": 1500,
+    "model_sets": [
+      "clinical",
+      "clinical_rna",
+      "clinical_cna",
+      "clinical_rna_cna"
+    ]
+  },
+  "track_b_pilot": {
+    "outer_folds": 5,
+    "outer_seed": 63001,
+    "iamb_alpha": 0.2,
+    "cox_penalizer": 0.05,
+    "five_year_months": 60.0,
+    "rna_top_positive": 100,
+    "rna_top_negative": 100,
+    "cna_top_positive": 100,
+    "cna_top_negative": 100,
+    "mutation_frequency_threshold": 0.01,
+    "maximum_mutation_candidates": 200,
+    "clinical_features": [
+      "age_at_diagnosis",
+      "grade",
+      "stage",
+      "tumor_size",
+      "positive_nodes",
+      "er_status",
+      "pr_status",
+      "her2_status",
+      "npi"
+    ],
+    "minimum_complete_n": 1500,
+    "minimum_events": 700
+  },
+  "files": {
+    "metabric_clinical_sample": "data_clinical_sample.txt",
+    "metabric_rna_cleaned": "metabric_rna_cleaned.csv",
+    "metabric_cna": "data_cna.txt",
+    "metabric_mutation_panel_matrix": "results/tables/metabric_m5/m27_metabric_selected_mutation_panel_LOCAL_ONLY.csv",
+    "fixed_rna_matrix": "results/tables/metabric_m4/m22_metabric_fixed_tcga_rna_panel_LOCAL_ONLY.csv",
+    "fixed_cna_matrix": "results/tables/metabric_m4/m22_metabric_fixed_tcga_cna_panel_LOCAL_ONLY.csv",
+    "primary_transport_panel": "results/tables/metabric_m5/m28_primary_transportable_panel.csv"
+  }
+}
