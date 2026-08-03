@@ -1,0 +1,93 @@
+{
+  "stage": 30,
+  "analysis_name": "Candidate V10 top-influence non-event leave-one-out analysis",
+  "status": "POST_HOC_DIAGNOSTIC_INFLUENCE_ANALYSIS",
+  "source": {
+    "v10_manifest": "data/derived/manifests/stage25c_candidate_v10_protocol_lock_manifest.json",
+    "v10_protocol": "paper_A_treatment_effects/candidate_v10/candidate_v10_protocol_amendment.json",
+    "v10_estimator_spec": "paper_A_treatment_effects/candidate_v10/candidate_v10_estimator_spec.json",
+    "stage25c_config": "stage25c_v10_unclipped_ato_config.json",
+    "stage26_config": "stage26_v10_point_estimate_config.json",
+    "stage26_calculation_manifest": "data/derived/manifests/stage26_candidate_v10_point_estimate_calculation_manifest.json",
+    "stage26_point_estimate": "results/tables/stage26_candidate_v10_point_estimate/s26_102_candidate_v10_point_estimate.csv",
+    "stage26_patient_scores": "results/tables/stage26_candidate_v10_point_estimate/s26_102_patient_scores_LOCAL_ONLY.csv",
+    "stage29_event_results": "results/tables/stage29_candidate_v10_event_influence/s29_114_leave_one_event_out_results.csv",
+    "v10_cohort": "data/derived/candidate_v10/outer_hormone_hrpos_her2neg_landmark180_no_documented_chemo_by180_ascertainable.csv",
+    "v10_compact": "data/derived/candidate_v10/outer_hormone_hrpos_her2neg_landmark180_no_documented_chemo_by180_ascertainable_compact.csv"
+  },
+  "output": {
+    "table_dir": "results/tables/stage30_candidate_v10_non_event_influence",
+    "figure_dir": "results/figures/stage30_candidate_v10_non_event_influence",
+    "calculation_manifest": "data/derived/manifests/stage30_candidate_v10_non_event_influence_manifest.json",
+    "locked_set_local": "results/tables/stage30_candidate_v10_non_event_influence/s30_115_locked_top_non_event_set_LOCAL_ONLY.csv",
+    "composition_table": "results/tables/stage30_candidate_v10_non_event_influence/s30_115_primary_influence_composition.csv",
+    "identity_check": "results/tables/stage30_candidate_v10_non_event_influence/s30_116_identity_reproduction.json",
+    "checkpoint_local": "results/tables/stage30_candidate_v10_non_event_influence/s30_116_top_non_event_checkpoint_LOCAL_ONLY.csv",
+    "public_results": "results/tables/stage30_candidate_v10_non_event_influence/s30_117_top_non_event_leave_one_out_results.csv",
+    "combined_summary_table": "results/tables/stage30_candidate_v10_non_event_influence/s30_117_combined_targeted_influence_summary.csv",
+    "final_summary": "results/tables/stage30_candidate_v10_non_event_influence/s30_117_non_event_influence_summary.json",
+    "figure": "results/figures/stage30_candidate_v10_non_event_influence/s30_117_top_non_event_leave_one_out.png"
+  },
+  "expected": {
+    "v10_protocol_id": "PAPER_A_CANDIDATE_V10_5302107BE048C9E2",
+    "stage26_calculation_id": "PAPER_A_V10_POINT_9B12226A42F67A61",
+    "primary_point_estimate_days": 67.9143835576809,
+    "n": 271,
+    "treated": 138,
+    "control": 133,
+    "events": 36,
+    "treated_events": 9,
+    "control_events": 27,
+    "features": 13,
+    "patient_score_rows": 271,
+    "event_deletions_completed": 36,
+    "identity_tolerance_days": 1e-09
+  },
+  "selection": {
+    "population": "analysis_event == 0",
+    "metric": "absolute_influence from locked Stage 26 patient scores",
+    "top_k": 10,
+    "tie_breakers": [
+      "absolute_influence descending",
+      "row_index ascending"
+    ],
+    "rationale": "Complements the all-event leave-one-out analysis by targeting non-event patients with the largest absolute influence in the locked primary estimate, including possible censoring-driven extremes."
+  },
+  "estimator": {
+    "partition_base_seeds": [
+      18101,
+      18102,
+      18103,
+      18104,
+      18105,
+      18106,
+      18107,
+      18108,
+      18109,
+      18110,
+      18111,
+      18112,
+      18113,
+      18114,
+      18115,
+      18116,
+      18117,
+      18118,
+      18119,
+      18120
+    ],
+    "n_folds": 5,
+    "maximum_partition_retries": 20,
+    "horizon_days": 730.0,
+    "interval_days": 90.0,
+    "censoring_g_min": 0.1,
+    "outcome_bound_low": 0.0,
+    "outcome_bound_high": 730.0,
+    "score": "algebraically_stabilized_unclipped_overlap_aipw"
+  },
+  "reporting": {
+    "large_change_days": 20.0,
+    "large_relative_change": 0.3
+  },
+  "boundary": "This is a post hoc targeted influence diagnostic. Selection uses the locked Stage 26 absolute influence ranking and is frozen before any leave-one-out refit is computed. It does not define a new estimand, change the Candidate V10 primary analysis, or generate a new confidence interval. Patient identifiers remain in LOCAL_ONLY files."
+}

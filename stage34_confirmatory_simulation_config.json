@@ -1,0 +1,109 @@
+{
+  "stage": 34,
+  "analysis_name": "Independent confirmatory sequencing simulation",
+  "status": "CONFIRMATORY_SIMULATION_PROTOCOL",
+  "source": {
+    "stage32_recommended_dgm": "results/tables/stage32_sequence_dgm_calibration/s32_123_recommended_dgm.json",
+    "stage33c_manifest": "data/derived/manifests/stage33c_pilot_decision_amendment_manifest.json",
+    "stage33c_decision": "results/tables/stage33c_pilot_decision_amendment/s33c_129_pilot_decision.json",
+    "stage31_utils": "scripts/_stage31_simulation_utils.py",
+    "stage33_utils": "scripts/_stage33_simulation_v2_utils.py"
+  },
+  "expected": {
+    "stage32_calibration_id": "PAPER_A_SEQUENCE_DGM_CAL_CE49A55D6F441130",
+    "stage33c_status": "STAGE33C_READY_FOR_INDEPENDENT_CONFIRMATORY_SIMULATION"
+  },
+  "simulation": {
+    "repetitions_per_scenario": 500,
+    "base_seed": 34000000,
+    "sample_sizes": [
+      559,
+      1118
+    ],
+    "sequencing_levels": [
+      "none",
+      "half_empirical",
+      "empirical"
+    ],
+    "effect_regimes": [
+      "true_zero",
+      "observed_risk_benefit"
+    ],
+    "intervals": 10,
+    "interval_days": 73.0,
+    "horizon_days": 730.0,
+    "censoring_g_min": 0.1,
+    "folds": 5,
+    "timing_ascertainability_probability": 0.9442508710801394,
+    "scenario_count": 12,
+    "method_count": 3,
+    "expected_method_runs": 18000
+  },
+  "methods": {
+    "naive_full": {
+      "covariates": [
+        "x1",
+        "x2",
+        "x3"
+      ],
+      "role": "intentionally_misspecified_diagnostic_comparator"
+    },
+    "adjusted_full": {
+      "covariates": [
+        "x1",
+        "x2",
+        "x3",
+        "chemo_by_day180"
+      ],
+      "role": "valid_full_cohort_estimator"
+    },
+    "sequencing_aware": {
+      "covariates": [
+        "x1",
+        "x2",
+        "x3"
+      ],
+      "role": "valid_restricted_population_estimator"
+    }
+  },
+  "confirmatory_gates": {
+    "minimum_success_fraction": 0.99,
+    "valid_methods": [
+      "adjusted_full",
+      "sequencing_aware"
+    ],
+    "maximum_absolute_bias_valid_methods_days": 10.0,
+    "minimum_if_coverage_valid_methods": 0.9,
+    "maximum_included_covariate_weighted_smd": 0.1,
+    "naive_no_sequence_true_zero_max_abs_estimate_days": 5.0,
+    "naive_empirical_true_zero_min_positive_estimate_days": 10.0,
+    "naive_empirical_min_abs_weighted_chemo_smd": 0.4,
+    "naive_empirical_benefit_min_positive_bias_days": 10.0,
+    "empirical_anchor_tolerances": {
+      "full_treated_fraction": 0.02,
+      "chemo_fraction_treated": 0.025,
+      "chemo_fraction_control": 0.025,
+      "strict_population_n": 10.0,
+      "strict_treated_n": 9.0,
+      "strict_control_n": 9.0,
+      "strict_treated_events": 3.0,
+      "strict_control_events": 4.0
+    }
+  },
+  "outputs": {
+    "table_dir": "results/tables/stage34_confirmatory_sequence_simulation",
+    "figure_dir": "results/figures/stage34_confirmatory_sequence_simulation",
+    "manifest": "data/derived/manifests/stage34_confirmatory_sequence_simulation_manifest.json",
+    "checkpoint": "results/tables/stage34_confirmatory_sequence_simulation/s34_131_confirmatory_checkpoint.csv",
+    "errors": "results/tables/stage34_confirmatory_sequence_simulation/s34_131_confirmatory_errors.csv",
+    "summary": "results/tables/stage34_confirmatory_sequence_simulation/s34_132_confirmatory_summary.csv",
+    "naive_decomposition": "results/tables/stage34_confirmatory_sequence_simulation/s34_132_naive_bias_decomposition.csv",
+    "anchor_checks": "results/tables/stage34_confirmatory_sequence_simulation/s34_132_empirical_anchor_checks.csv",
+    "gates": "results/tables/stage34_confirmatory_sequence_simulation/s34_132_confirmatory_gates.csv",
+    "final_json": "results/tables/stage34_confirmatory_sequence_simulation/s34_132_confirmatory_summary.json",
+    "null_figure": "results/figures/stage34_confirmatory_sequence_simulation/s34_132_true_zero_estimates.png",
+    "bias_figure": "results/figures/stage34_confirmatory_sequence_simulation/s34_132_bias_by_sequencing.png",
+    "smd_figure": "results/figures/stage34_confirmatory_sequence_simulation/s34_132_omitted_chemo_smd.png"
+  },
+  "boundary": "This is an independent confirmatory simulation with new seeds. Pilot repetitions are not reused. Scenario definitions, DGM parameters, methods, truths, and gates are locked before any confirmatory result. The observed-risk benefit regime is a simulation scenario calibrated to empirical event margins, not a claim that the calibrated parameter is the true clinical effect."
+}

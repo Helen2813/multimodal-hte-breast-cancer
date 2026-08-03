@@ -1,0 +1,108 @@
+{
+  "status": "STAGE28_GMIN_SENSITIVITY_LOCKED",
+  "created_utc": "2026-08-02T00:36:31.234742+00:00",
+  "v10_protocol_id": "PAPER_A_CANDIDATE_V10_5302107BE048C9E2",
+  "stage26_calculation_id": "PAPER_A_V10_POINT_9B12226A42F67A61",
+  "stage26_primary_point_estimate_days": 67.9143835576809,
+  "g_min_values": [
+    0.1,
+    0.15,
+    0.2
+  ],
+  "primary_g_min": 0.1,
+  "post_hoc_sensitivity_values": [
+    0.15,
+    0.2
+  ],
+  "inference": "Point estimates only. No new bootstrap confidence intervals are computed, and the primary G-min=0.10 analysis remains unchanged.",
+  "boundary": "Only the censoring-survival truncation constant changes. The frozen Candidate V10 cohort, treatment definition, 13-variable adjustment set, full-sample unpenalized propensity, overlap score, cross-fitting fold construction, nuisance learners, and 20 partition seeds remain unchanged. No manuscript prose is generated.",
+  "locked_files": [
+    {
+      "path": "stage28_v10_gmin_sensitivity_config.json",
+      "sha256": "f1b0cfedb246b1b3e638c51ec3983e3ea1116a3e7aa32e5942a3e7fa161fdfcd",
+      "size_bytes": 3803
+    },
+    {
+      "path": "scripts/_stage28_v10_gmin_utils.py",
+      "sha256": "b0af80fe8e3121b0a22cfc87c0e01b3dbc99c4c0454e7e66238836a3d5f7ccf3",
+      "size_bytes": 5252
+    },
+    {
+      "path": "scripts/109_stage28_lock_gmin_sensitivity.py",
+      "sha256": "61502fa6933ce23d389f09f9f6347640cf220e03b3630f9973728fadca00a441",
+      "size_bytes": 3676
+    },
+    {
+      "path": "scripts/110_stage28_compute_gmin_sensitivity.py",
+      "sha256": "ce8cfd1850a8064bda0ca5327cee46ff6be1d4e61bd768ceb1dc17283b8e2919",
+      "size_bytes": 10322
+    },
+    {
+      "path": "scripts/111_stage28_summarize_gmin_sensitivity.py",
+      "sha256": "6b63f60bd0b786f449373efca6acce3ff2cd5529c0415e6a8d9ab914c67f6120",
+      "size_bytes": 3558
+    },
+    {
+      "path": "run_stage28_candidate_v10_gmin_sensitivity.ps1",
+      "sha256": "fb25db10c936fa2cbe26aad8432bde506e85d8cd275512a962c6a8c954d6e7a7",
+      "size_bytes": 1865
+    },
+    {
+      "path": "data/derived/manifests/stage25c_candidate_v10_protocol_lock_manifest.json",
+      "sha256": "1cf09a2f5db4155e39f55b12f6a06f0dbb4190aff8b2239a044e7d420f4be440",
+      "size_bytes": 3654
+    },
+    {
+      "path": "paper_A_treatment_effects/candidate_v10/candidate_v10_protocol_amendment.json",
+      "sha256": "4021cf529b782c53b0f802e3da73297c418d066fc0b0208a9d0950f7edbe5807",
+      "size_bytes": 2680
+    },
+    {
+      "path": "paper_A_treatment_effects/candidate_v10/candidate_v10_estimator_spec.json",
+      "sha256": "b9fd529ef5ea6aeb5ed6939fec2da3d86cc78b39b22dbb446733851c074a4548",
+      "size_bytes": 8037
+    },
+    {
+      "path": "stage25c_v10_unclipped_ato_config.json",
+      "sha256": "93379d3f124a4a2caa30d49018fe346e30ac832c371e9e82b42d0bcc2f43350e",
+      "size_bytes": 5208
+    },
+    {
+      "path": "stage26_v10_point_estimate_config.json",
+      "sha256": "8043cc20740db8a770444e31ff29f59499166dedba9614c6f95d457befbda296",
+      "size_bytes": 3037
+    },
+    {
+      "path": "data/derived/manifests/stage26_candidate_v10_point_estimate_calculation_manifest.json",
+      "sha256": "4b59cdadb3c96beceee494e1d2e5f036f6cacea33f8a7e43ba9eadb2adb910c9",
+      "size_bytes": 3824
+    },
+    {
+      "path": "results/tables/stage26_candidate_v10_point_estimate/s26_102_candidate_v10_point_estimate.csv",
+      "sha256": "1469ff5d714f7819b411396d4c180ad75a004391e532ae0988505d982631fd5e",
+      "size_bytes": 1206
+    },
+    {
+      "path": "data/derived/candidate_v10/outer_hormone_hrpos_her2neg_landmark180_no_documented_chemo_by180_ascertainable.csv",
+      "sha256": "95e739b19f847b13b084d24a39826b3c882d1ba83e6677c0f794588228a96078",
+      "size_bytes": 1060366
+    },
+    {
+      "path": "data/derived/candidate_v10/outer_hormone_hrpos_her2neg_landmark180_no_documented_chemo_by180_ascertainable_compact.csv",
+      "sha256": "697bd3db804775387e9f86c8e0470bd78d43a4f018269529ef603750680849bf",
+      "size_bytes": 34094
+    },
+    {
+      "path": "scripts/_stage25c_v10_utils.py",
+      "sha256": "54c614f067be8a51aabd967e9ebf34a24d3e7669cd6bc29d26354e33ac66a03a",
+      "size_bytes": 12816
+    },
+    {
+      "path": "scripts/_stage26_v10_utils.py",
+      "sha256": "bc7eda1da8b3088acfe19335dff45f85f7a1a9310205411308361fc8b261bd32",
+      "size_bytes": 15045
+    }
+  ],
+  "v10_integrity_hash": "d39bf97e51550fafc95c9cdf5f9787a4f418522c66bd775b3f540325c9e72fd1",
+  "sensitivity_id": "PAPER_A_V10_GMIN_F614AE000CB696AA"
+}

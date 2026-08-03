@@ -1,0 +1,86 @@
+from __future__ import annotations
+
+from datetime import datetime, timezone
+import json
+
+from _stage31_simulation_utils import (
+    canonical_sha256,
+    load_json,
+    project_root,
+    sha256_file,
+    write_json,
+)
+
+
+def main() -> int:
+    root = project_root()
+    config = load_json(
+        root / "stage31_sequencing_simulation_config.json"
+    )
+    output = config["outputs"]
+    manifest_path = root / output["manifest"]
+
+    print("=" * 128)
+    print("STAGE 118 - LOCK FOCUSED SEQUENCING SIMULATION PILOT")
+    print("=" * 128)
+
+    locked_inputs = [
+        root / "stage31_sequencing_simulation_config.json",
+        root / "scripts/_stage31_simulation_utils.py",
+        root / "scripts/118_stage31_lock_simulation_pilot.py",
+        root / "scripts/119_stage31_run_simulation_pilot.py",
+        root / "scripts/120_stage31_summarize_simulation_pilot.py",
+        root / "run_stage31_sequencing_simulation_pilot.ps1",
+    ]
+    locked_files = [
+        {
+            "path": str(path.relative_to(root)).replace("\\", "/"),
+            "sha256": sha256_file(path),
+            "size_bytes": path.stat().st_size,
+        }
+        for path in locked_inputs
+    ]
+
+    if manifest_path.exists():
+        existing = load_json(manifest_path)
+        for item in existing["locked_files"]:
+            path = root / item["path"]
+            if (
+                not path.exists()
+                or sha256_file(path) != item["sha256"]
+            ):
+                raise RuntimeError(
+                    "Existing Stage 31 lock failed integrity: "
+                    + item["path"]
+                )
+        print("Existing Stage 31 simulation lock verified.")
+        print(json.dumps(existing, indent=2))
+        return 0
+
+    created = datetime.now(timezone.utc).isoformat()
+    manifest = {
+        "status": "STAGE31_SIMULATION_PILOT_LOCKED",
+        "created_utc": created,
+        "purpose": config["purpose"],
+        "simulation": config["simulation"],
+        "estimators": config["estimators"],
+        "pilot_gates": config["pilot_gates"],
+        "boundary": config["boundary"],
+        "locked_files": locked_files,
+    }
+    manifest["simulation_id"] = (
+        "PAPER_A_SEQUENCE_SIM_PILOT_"
+        + canonical_sha256(manifest)[:16].upper()
+    )
+    write_json(manifest, manifest_path)
+
+    print(json.dumps(manifest, indent=2))
+    print(
+        "\nPASS: simulation scenarios and estimators locked "
+        "before pilot results."
+    )
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

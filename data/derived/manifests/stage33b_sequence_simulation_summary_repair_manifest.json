@@ -1,0 +1,116 @@
+{
+  "status": "STAGE33B_NULL_SUMMARY_REPAIR_AUDITED",
+  "created_utc": "2026-08-02T02:51:38.699183+00:00",
+  "stage33_simulation_id": "PAPER_A_SEQUENCE_SIM_PILOT_V2_51A7BCDAE235EECB",
+  "repair_reason": "The literal value 'null' was first parsed as missing during Stage 33 checkpoint append/resume operations. Existing null rows were then written back as empty CSV fields. The scenario_id retained the true regime suffix for every row. Stage 33B v2 deterministically reconstructs effect_regime from scenario_id, verifies that this restores exactly 1,800 null and 1,800 benefit method-runs, and rebuilds all summaries without rerunning any simulation.",
+  "boundary": "No simulation repetition is rerun. No estimator, scenario, seed, truth, gate, or empirical anchor is changed. Original Stage 33 files remain untouched. Empty effect_regime cells are reconstructed only from the locked scenario_id suffix, which already encodes NULL or EMPIRICALLY_CALIBRATED_BENEFIT.",
+  "parse_audit": [
+    {
+      "check": "checkpoint rows",
+      "observed": 3600,
+      "expected": 3600,
+      "pass": true
+    },
+    {
+      "check": "default parser missing effect_regime rows",
+      "observed": 1800,
+      "expected": 1800,
+      "pass": true
+    },
+    {
+      "check": "raw empty effect_regime cells",
+      "observed": 1800,
+      "expected": 1800,
+      "pass": true
+    },
+    {
+      "check": "reconstructed null rows",
+      "observed": 1800,
+      "expected": 1800,
+      "pass": true
+    },
+    {
+      "check": "safe parser benefit rows",
+      "observed": 1800,
+      "expected": 1800,
+      "pass": true
+    },
+    {
+      "check": "duplicate checkpoint keys",
+      "observed": 0,
+      "expected": 0,
+      "pass": true
+    },
+    {
+      "check": "scenario inventory count",
+      "observed": 12,
+      "expected": 12,
+      "pass": true
+    },
+    {
+      "check": "original summary rows",
+      "observed": 18,
+      "expected": 18,
+      "pass": true
+    }
+  ],
+  "scenario_inventory_sha256": "1f7fc50641c04745b7a705db5b85f96d009b6757f204e29c6092cf709c63e00f",
+  "locked_files": [
+    {
+      "path": "stage33b_null_summary_repair_config.json",
+      "sha256": "5df7bf20f8dfb1e2c74cc1426fc0cea63bdb1abc1ce9d45d82b6301ec4be2252",
+      "size_bytes": 3891
+    },
+    {
+      "path": "scripts/_stage33b_summary_repair_utils.py",
+      "sha256": "20ab6a796bf4273a8ca4977fd77bc7a0dd2096b4939f485d4b1306ccb33de62a",
+      "size_bytes": 18319
+    },
+    {
+      "path": "scripts/127_stage33b_audit_null_parse.py",
+      "sha256": "d81cbf5cfccf30c9b6666a89d504ec1b1bb9b1758e6246e8e8e69f104f9cbf2b",
+      "size_bytes": 7472
+    },
+    {
+      "path": "scripts/128_stage33b_repair_summary.py",
+      "sha256": "833f6013ca50490796559a642ac1744012f5d1fbf8f6fe2d8b60ac11a361208d",
+      "size_bytes": 10008
+    },
+    {
+      "path": "run_stage33b_null_summary_repair.ps1",
+      "sha256": "e42146413c782c92c9301ff5cb65251118968697e2e2dd1071502f8556aa3a41",
+      "size_bytes": 1837
+    },
+    {
+      "path": "stage33_sequence_simulation_pilot_v2_config.json",
+      "sha256": "f45fef66d5b6e212579f84334c972d9c62f9c5707986bf03d0fe71a73ffd5ed5",
+      "size_bytes": 5331
+    },
+    {
+      "path": "data/derived/manifests/stage33_sequence_simulation_pilot_v2_manifest.json",
+      "sha256": "a027f7200df20b5455515382f9f3574ea8d6975d16db0b49150cac28f83894b4",
+      "size_bytes": 6248
+    },
+    {
+      "path": "results/tables/stage33_sequence_simulation_pilot_v2/s33_125_simulation_checkpoint.csv",
+      "sha256": "cb15e60ae0031278ee0f1bb2c3204cdf64675dc94168422089c04a207b3a4d35",
+      "size_bytes": 2564890
+    },
+    {
+      "path": "results/tables/stage33_sequence_simulation_pilot_v2/s33_126_scenario_summary.csv",
+      "sha256": "5879099015d3bfc912ecd90abccd5ddb35ef52f6355aa3606cad8a411230bc6b",
+      "size_bytes": 9868
+    },
+    {
+      "path": "results/tables/stage33_sequence_simulation_pilot_v2/s33_126_design_gates.csv",
+      "sha256": "39d8a3c28c6332edfb7c76c6818906cc0a70ef103b5409b966cff099f7e78ac8",
+      "size_bytes": 1642
+    },
+    {
+      "path": "results/tables/stage33_sequence_simulation_pilot_v2/s33_126_simulation_pilot_v2_summary.json",
+      "sha256": "2f0031d26c3ac5aec1b403f6d9d32a569bf03eeb2f04c821ae14b8928dd4594a",
+      "size_bytes": 44043
+    }
+  ],
+  "repair_id": "PAPER_A_STAGE33B_NULL_REPAIR_DD94FEB2DF4B9E43"
+}

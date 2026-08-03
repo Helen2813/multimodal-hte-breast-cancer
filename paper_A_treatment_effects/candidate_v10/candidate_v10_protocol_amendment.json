@@ -1,0 +1,41 @@
+{
+  "protocol_id": "PAPER_A_CANDIDATE_V10_5302107BE048C9E2",
+  "status": "PAPER_A_CANDIDATE_V10_LOCKED_BEFORE_EFFECT_ESTIMATION",
+  "created_utc": "2026-08-01T22:01:02.163332+00:00",
+  "disclosure": "Post hoc design-stage amendment. Candidate V9 prompted a chemotherapy-sequencing audit. The strict V10 population was frozen before effect estimation. A regularized cross-fitted propensity failed the balance gate. An unpenalized logistic propensity achieved exact raw overlap balance but failed pointwise minimum/maximum propensity gates. Because the overlap AIPW score does not require inverse propensity weighting after algebraic simplification, Stage 25C replaces pointwise endpoint gates with tail-mass, overlap-mass, ESS, balance, and bootstrap-feasibility gates and locks the unclipped stabilized score before any V10 outcome effect is computed.",
+  "candidate_v10_effect_computed": false,
+  "relationship_to_v9": {
+    "v9_protocol_id": "PAPER_A_CANDIDATE_V9_9F1E8E368C92EC02",
+    "v9_remains_immutable": true,
+    "changes": [
+      "Sequencing-aware restriction to the frozen strict V10 population.",
+      "Full-sample unpenalized logistic propensity on the same 13 baseline variables.",
+      "Algebraically stabilized unclipped overlap AIPW score."
+    ],
+    "unchanged": [
+      "day-180 treatment assignment",
+      "730-day post-landmark RMST outcome",
+      "ATO target population",
+      "13-variable compact adjustment set",
+      "cross-fitted censoring nuisance",
+      "cross-fitted bounded arm-specific RidgeCV outcome nuisance",
+      "20 nuisance partition seeds",
+      "G-min=0.10 for censoring only",
+      "ordinary patient bootstrap with complete nuisance refitting"
+    ]
+  },
+  "population": {
+    "n": 271,
+    "treated": 138,
+    "control": 133,
+    "events": 36,
+    "treated_events": 9,
+    "control_events": 27,
+    "features": 13,
+    "eligibility": "HR-positive/HER2-negative day-180 landmark survivors with no documented chemotherapy initiation by day 180 and ascertainable chemotherapy start timing.",
+    "cohort_sha256": "95e739b19f847b13b084d24a39826b3c882d1ba83e6677c0f794588228a96078",
+    "compact_sha256": "697bd3db804775387e9f86c8e0470bd78d43a4f018269529ef603750680849bf"
+  },
+  "estimator_spec_path": "paper_A_treatment_effects/candidate_v10/candidate_v10_estimator_spec.json",
+  "interpretation_boundary": "The effect targets the overlap population among patients without documented chemotherapy initiation during the day-180 grace period. It does not generalize to patients receiving chemotherapy during that period. The design was locked before the V10 outcome effect was computed."
+}

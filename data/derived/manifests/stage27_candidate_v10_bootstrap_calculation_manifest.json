@@ -1,0 +1,140 @@
+{
+  "status": "CANDIDATE_V10_PUBLICATION_BOOTSTRAP_LOCKED",
+  "created_utc": "2026-08-01T23:40:13.026893+00:00",
+  "v10_protocol_id": "PAPER_A_CANDIDATE_V10_5302107BE048C9E2",
+  "stage26_calculation_id": "PAPER_A_V10_POINT_9B12226A42F67A61",
+  "point_estimate_days": 67.9143835576809,
+  "bootstrap": {
+    "repetitions": 300,
+    "sampling": "ordinary patient bootstrap with replacement",
+    "duplicate_fold_rule": "all bootstrap copies of the same original patient remain in the same nuisance fold",
+    "required_successful_repetitions": 300,
+    "identity_reproduction_tolerance_days": 1e-09,
+    "primary_interval": "95% percentile patient-bootstrap interval",
+    "sensitivity_intervals": [
+      "95% basic patient-bootstrap interval",
+      "95% studentized patient-bootstrap interval"
+    ],
+    "checkpoint_every": 1,
+    "base_seed_source": "paper_A_treatment_effects/candidate_v10/candidate_v10_estimator_spec.json::bootstrap.base_seed",
+    "repetitions_source": "paper_A_treatment_effects/candidate_v10/candidate_v10_estimator_spec.json::bootstrap.repetitions",
+    "base_seed": 21000
+  },
+  "estimator": {
+    "partition_base_seeds": [
+      18101,
+      18102,
+      18103,
+      18104,
+      18105,
+      18106,
+      18107,
+      18108,
+      18109,
+      18110,
+      18111,
+      18112,
+      18113,
+      18114,
+      18115,
+      18116,
+      18117,
+      18118,
+      18119,
+      18120
+    ],
+    "n_folds": 5,
+    "maximum_partition_retries": 20,
+    "horizon_days": 730.0,
+    "interval_days": 90.0,
+    "censoring_g_min": 0.1,
+    "outcome_bound_low": 0.0,
+    "outcome_bound_high": 730.0,
+    "score": "algebraically_stabilized_unclipped_overlap_aipw"
+  },
+  "boundary": "Stage 27 is the locked fully refitted patient bootstrap for Candidate V10. Every replicate refits the full-sample propensity and all cross-fitted censoring/outcome nuisance models. No replicate is dropped for an unfavourable effect or for exceeding descriptive tail diagnostics.",
+  "locked_files": [
+    {
+      "path": "stage27_v10_bootstrap_config.json",
+      "sha256": "b6300253442c5e9acfbbe7d2af3d899e1a7dc74fd69fa7871bade641dcea3abf",
+      "size_bytes": 4447
+    },
+    {
+      "path": "scripts/_stage27_v10_bootstrap_utils.py",
+      "sha256": "3992481cb7a9402fc001c2e972e59ac9156d88039d741077d1d91dd25b331639",
+      "size_bytes": 18010
+    },
+    {
+      "path": "scripts/104_stage27_lock_publication_bootstrap.py",
+      "sha256": "f16181bde26e663d993e957ce09fec28b920be8b29e173922b6d9a8bfe24e3eb",
+      "size_bytes": 4685
+    },
+    {
+      "path": "scripts/105_stage27_identity_reproduction.py",
+      "sha256": "5cc00b8de9f3e11fd9adbefc61db86cbcf1eee652d1b4d9435778ca2272d9f3a",
+      "size_bytes": 2137
+    },
+    {
+      "path": "scripts/106_stage27_run_publication_bootstrap.py",
+      "sha256": "f09286a7de0163ff15fa82a45072c0b23e78352277847ca6228d8a413a8e4bb6",
+      "size_bytes": 4760
+    },
+    {
+      "path": "scripts/107_stage27_summarize_publication_bootstrap.py",
+      "sha256": "3d9cfc8431bca5f78c8929a3ae4dcc86c32dda36774a1a8b631589a4956db78c",
+      "size_bytes": 12184
+    },
+    {
+      "path": "run_stage27_candidate_v10_publication_bootstrap.ps1",
+      "sha256": "825b973edb7dd6f15794117158f346b0645d242a457963b27f6fc57f3a075b45",
+      "size_bytes": 2017
+    },
+    {
+      "path": "data/derived/manifests/stage25c_candidate_v10_protocol_lock_manifest.json",
+      "sha256": "1cf09a2f5db4155e39f55b12f6a06f0dbb4190aff8b2239a044e7d420f4be440",
+      "size_bytes": 3654
+    },
+    {
+      "path": "paper_A_treatment_effects/candidate_v10/candidate_v10_protocol_amendment.json",
+      "sha256": "4021cf529b782c53b0f802e3da73297c418d066fc0b0208a9d0950f7edbe5807",
+      "size_bytes": 2680
+    },
+    {
+      "path": "paper_A_treatment_effects/candidate_v10/candidate_v10_estimator_spec.json",
+      "sha256": "b9fd529ef5ea6aeb5ed6939fec2da3d86cc78b39b22dbb446733851c074a4548",
+      "size_bytes": 8037
+    },
+    {
+      "path": "stage25c_v10_unclipped_ato_config.json",
+      "sha256": "93379d3f124a4a2caa30d49018fe346e30ac832c371e9e82b42d0bcc2f43350e",
+      "size_bytes": 5208
+    },
+    {
+      "path": "data/derived/manifests/stage26_candidate_v10_point_estimate_calculation_manifest.json",
+      "sha256": "4b59cdadb3c96beceee494e1d2e5f036f6cacea33f8a7e43ba9eadb2adb910c9",
+      "size_bytes": 3824
+    },
+    {
+      "path": "results/tables/stage26_candidate_v10_point_estimate/s26_102_candidate_v10_point_estimate.csv",
+      "sha256": "1469ff5d714f7819b411396d4c180ad75a004391e532ae0988505d982631fd5e",
+      "size_bytes": 1206
+    },
+    {
+      "path": "results/tables/stage26_candidate_v10_point_estimate/s26_102_partition_estimates.csv",
+      "sha256": "4f19b2414071c0d0a0adca494c42b3c1b5218a1a18a259e2684663cd24a9412a",
+      "size_bytes": 10088
+    },
+    {
+      "path": "data/derived/candidate_v10/outer_hormone_hrpos_her2neg_landmark180_no_documented_chemo_by180_ascertainable.csv",
+      "sha256": "95e739b19f847b13b084d24a39826b3c882d1ba83e6677c0f794588228a96078",
+      "size_bytes": 1060366
+    },
+    {
+      "path": "data/derived/candidate_v10/outer_hormone_hrpos_her2neg_landmark180_no_documented_chemo_by180_ascertainable_compact.csv",
+      "sha256": "697bd3db804775387e9f86c8e0470bd78d43a4f018269529ef603750680849bf",
+      "size_bytes": 34094
+    }
+  ],
+  "v10_integrity_hash": "d39bf97e51550fafc95c9cdf5f9787a4f418522c66bd775b3f540325c9e72fd1",
+  "bootstrap_id": "PAPER_A_V10_BOOTSTRAP_2DF1DE10C0283275"
+}

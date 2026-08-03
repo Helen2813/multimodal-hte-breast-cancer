@@ -1,0 +1,31 @@
+{
+  "stage": "34B",
+  "analysis_name": "Compact extraction of completed Stage 34 results",
+  "status": "DETERMINISTIC_RESULT_EXTRACTION",
+  "source": {
+    "manifest": "data/derived/manifests/stage34_confirmatory_sequence_simulation_manifest.json",
+    "summary_csv": "results/tables/stage34_confirmatory_sequence_simulation/s34_132_confirmatory_summary.csv",
+    "anchor_checks": "results/tables/stage34_confirmatory_sequence_simulation/s34_132_empirical_anchor_checks.csv",
+    "gates": "results/tables/stage34_confirmatory_sequence_simulation/s34_132_confirmatory_gates.csv",
+    "final_json": "results/tables/stage34_confirmatory_sequence_simulation/s34_132_confirmatory_summary.json"
+  },
+  "expected": {
+    "simulation_id": "PAPER_A_SEQUENCE_CONFIRMATORY_5C6BC3ED8126D9BB",
+    "summary_rows": 36,
+    "methods": [
+      "naive_full",
+      "adjusted_full",
+      "sequencing_aware"
+    ],
+    "sample_sizes": [
+      559,
+      1118
+    ]
+  },
+  "output": {
+    "table_dir": "results/tables/stage34b_compact_confirmatory_summary",
+    "compact_csv": "results/tables/stage34b_compact_confirmatory_summary/s34b_133_key_confirmatory_results.csv",
+    "compact_json": "results/tables/stage34b_compact_confirmatory_summary/s34b_133_compact_confirmatory_summary.json"
+  },
+  "boundary": "This stage reruns no simulation and changes no Stage 34 output. It only reads the completed Stage 34 files and prints a compact numeric summary suitable for review."
+}

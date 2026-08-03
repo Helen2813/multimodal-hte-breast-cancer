@@ -1,0 +1,104 @@
+{
+  "stage": 26,
+  "status": "CANDIDATE_V10_POINT_ESTIMATE_CALCULATION_LOCKED",
+  "created_utc": "2026-08-01T22:10:04.051938+00:00",
+  "v10_protocol_id": "PAPER_A_CANDIDATE_V10_5302107BE048C9E2",
+  "effect_computed_at_lock": false,
+  "estimator": {
+    "partition_base_seeds": [
+      18101,
+      18102,
+      18103,
+      18104,
+      18105,
+      18106,
+      18107,
+      18108,
+      18109,
+      18110,
+      18111,
+      18112,
+      18113,
+      18114,
+      18115,
+      18116,
+      18117,
+      18118,
+      18119,
+      18120
+    ],
+    "n_folds": 5,
+    "maximum_partition_retries": 20,
+    "horizon_days": 730.0,
+    "interval_days": 90.0,
+    "censoring_g_min": 0.1,
+    "outcome_bound_low": 0.0,
+    "outcome_bound_high": 730.0,
+    "score": "algebraically_stabilized_unclipped_overlap_aipw"
+  },
+  "boundary": "Stage 26 computes the locked Candidate V10 point estimate only. Its influence-function interval is diagnostic and is not the primary publication interval. A separate fully refitted patient bootstrap is not run until the Stage 26 diagnostics are reviewed.",
+  "locked_files": [
+    {
+      "path": "stage26_v10_point_estimate_config.json",
+      "sha256": "8043cc20740db8a770444e31ff29f59499166dedba9614c6f95d457befbda296",
+      "size_bytes": 3037
+    },
+    {
+      "path": "scripts/_stage26_v10_utils.py",
+      "sha256": "bc7eda1da8b3088acfe19335dff45f85f7a1a9310205411308361fc8b261bd32",
+      "size_bytes": 15045
+    },
+    {
+      "path": "scripts/101_stage26_lock_point_estimate_calculation.py",
+      "sha256": "974fbcecaa1ca2e5802e73c6c780c059203bbd3a3f9792e52a3d0d1918447eb7",
+      "size_bytes": 4210
+    },
+    {
+      "path": "scripts/102_stage26_compute_candidate_v10_point_estimate.py",
+      "sha256": "320c508f5fe360ca4d415630c9b3be8bb26b6b3b0f0947fc5de33193fd727828",
+      "size_bytes": 11411
+    },
+    {
+      "path": "scripts/103_stage26_review_point_estimate_diagnostics.py",
+      "sha256": "be9b7efe624364d948fe77a250c510bb3c7c0bbbc12f3ef9f97a9a0983903ecf",
+      "size_bytes": 7723
+    },
+    {
+      "path": "run_stage26_candidate_v10_point_estimate.ps1",
+      "sha256": "ca7ad8cd17f837c2ef184504436c9060a4d52fb6445e52bb32ab595115c3209f",
+      "size_bytes": 1984
+    },
+    {
+      "path": "data/derived/manifests/stage25c_candidate_v10_protocol_lock_manifest.json",
+      "sha256": "1cf09a2f5db4155e39f55b12f6a06f0dbb4190aff8b2239a044e7d420f4be440",
+      "size_bytes": 3654
+    },
+    {
+      "path": "paper_A_treatment_effects/candidate_v10/candidate_v10_protocol_amendment.json",
+      "sha256": "4021cf529b782c53b0f802e3da73297c418d066fc0b0208a9d0950f7edbe5807",
+      "size_bytes": 2680
+    },
+    {
+      "path": "paper_A_treatment_effects/candidate_v10/candidate_v10_estimator_spec.json",
+      "sha256": "b9fd529ef5ea6aeb5ed6939fec2da3d86cc78b39b22dbb446733851c074a4548",
+      "size_bytes": 8037
+    },
+    {
+      "path": "stage25c_v10_unclipped_ato_config.json",
+      "sha256": "93379d3f124a4a2caa30d49018fe346e30ac832c371e9e82b42d0bcc2f43350e",
+      "size_bytes": 5208
+    },
+    {
+      "path": "data/derived/candidate_v10/outer_hormone_hrpos_her2neg_landmark180_no_documented_chemo_by180_ascertainable.csv",
+      "sha256": "95e739b19f847b13b084d24a39826b3c882d1ba83e6677c0f794588228a96078",
+      "size_bytes": 1060366
+    },
+    {
+      "path": "data/derived/candidate_v10/outer_hormone_hrpos_her2neg_landmark180_no_documented_chemo_by180_ascertainable_compact.csv",
+      "sha256": "697bd3db804775387e9f86c8e0470bd78d43a4f018269529ef603750680849bf",
+      "size_bytes": 34094
+    }
+  ],
+  "v10_lock_integrity_hash": "d39bf97e51550fafc95c9cdf5f9787a4f418522c66bd775b3f540325c9e72fd1",
+  "calculation_id": "PAPER_A_V10_POINT_9B12226A42F67A61"
+}

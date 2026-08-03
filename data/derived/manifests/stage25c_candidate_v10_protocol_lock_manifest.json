@@ -1,0 +1,89 @@
+{
+  "protocol_id": "PAPER_A_CANDIDATE_V10_5302107BE048C9E2",
+  "protocol_sha256": "5302107be048c9e287a48bbaa4c6b4ad54967675c0477c16670c6bd3f22b30ee",
+  "status": "PAPER_A_CANDIDATE_V10_LOCKED_BEFORE_EFFECT_ESTIMATION",
+  "created_utc": "2026-08-01T22:01:02.163332+00:00",
+  "candidate_v10_effect_computed": false,
+  "candidate_v9_protocol_id": "PAPER_A_CANDIDATE_V9_9F1E8E368C92EC02",
+  "locked_counts": {
+    "n": 271,
+    "treated": 138,
+    "control": 133,
+    "events": 36,
+    "treated_events": 9,
+    "control_events": 27,
+    "features": 13
+  },
+  "locked_files": [
+    {
+      "path": "stage25c_v10_unclipped_ato_config.json",
+      "sha256": "93379d3f124a4a2caa30d49018fe346e30ac832c371e9e82b42d0bcc2f43350e",
+      "size_bytes": 5208
+    },
+    {
+      "path": "scripts/_stage25c_v10_utils.py",
+      "sha256": "54c614f067be8a51aabd967e9ebf34a24d3e7669cd6bc29d26354e33ac66a03a",
+      "size_bytes": 12816
+    },
+    {
+      "path": "scripts/99_stage25c_validate_unclipped_ato_design.py",
+      "sha256": "12adfc3d43c1c551825e08521411156695ee7b98820409d5c9becc007cf7802a",
+      "size_bytes": 10872
+    },
+    {
+      "path": "scripts/100_stage25c_lock_candidate_v10_protocol.py",
+      "sha256": "6e16fecf30de918d38ee24a3f68fdd00e26605ab45bf6e3fd052fcdfb35b611d",
+      "size_bytes": 7750
+    },
+    {
+      "path": "run_stage25c_candidate_v10_unclipped_ato_lock.ps1",
+      "sha256": "c041fd6ef1cc755d063203024e2788f5c22ce7e9a5dbeed0aa468902154ba8a4",
+      "size_bytes": 2668
+    },
+    {
+      "path": "data/derived/candidate_v10/outer_hormone_hrpos_her2neg_landmark180_no_documented_chemo_by180_ascertainable.csv",
+      "sha256": "95e739b19f847b13b084d24a39826b3c882d1ba83e6677c0f794588228a96078",
+      "size_bytes": 1060366
+    },
+    {
+      "path": "data/derived/candidate_v10/outer_hormone_hrpos_her2neg_landmark180_no_documented_chemo_by180_ascertainable_compact.csv",
+      "sha256": "697bd3db804775387e9f86c8e0470bd78d43a4f018269529ef603750680849bf",
+      "size_bytes": 34094
+    },
+    {
+      "path": "results/tables/stage25c_candidate_v10_unclipped_ato/s25c_99_propensity_coefficients.csv",
+      "sha256": "c43061d725cb6931238a4d57141396cd6c3a0f710e5e4205f867fec7b33ba1c6",
+      "size_bytes": 692
+    },
+    {
+      "path": "results/tables/stage25c_candidate_v10_unclipped_ato/s25c_99_unclipped_ato_balance.csv",
+      "sha256": "76e4f37c4f2878584dc583b62052f4bd3c15a4324178d27efe5243be812d718c",
+      "size_bytes": 1130
+    },
+    {
+      "path": "results/tables/stage25c_candidate_v10_unclipped_ato/s25c_99_propensity_bootstrap_feasibility.csv",
+      "sha256": "57d46daf4a30e24957eec48fa894f4441f1a9798beb8d12074d28e0a514d9a6d",
+      "size_bytes": 103993
+    },
+    {
+      "path": "results/tables/stage25c_candidate_v10_unclipped_ato/s25c_99_design_gates.csv",
+      "sha256": "9417fdc39406a6b1a704f9a2943987ee10cb53db9287e5468aaddef753b8fe11",
+      "size_bytes": 690
+    },
+    {
+      "path": "results/tables/stage25c_candidate_v10_unclipped_ato/s25c_99_design_summary.json",
+      "sha256": "cfb5f1ba8bab4364ae5a6e39811a52c84516bb48a15ebb850bea16a53146b96a",
+      "size_bytes": 4095
+    },
+    {
+      "path": "paper_A_treatment_effects/candidate_v10/candidate_v10_estimator_spec.json",
+      "sha256": "b9fd529ef5ea6aeb5ed6939fec2da3d86cc78b39b22dbb446733851c074a4548",
+      "size_bytes": 8037
+    },
+    {
+      "path": "paper_A_treatment_effects/candidate_v10/candidate_v10_protocol_amendment.json",
+      "sha256": "4021cf529b782c53b0f802e3da73297c418d066fc0b0208a9d0950f7edbe5807",
+      "size_bytes": 2680
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+CANDIDATE V10 LOCKED BEFORE EFFECT ESTIMATION
+Protocol ID: PAPER_A_CANDIDATE_V10_5302107BE048C9E2
+Created UTC: 2026-08-01T22:01:02.163332+00:00
+Candidate V9 remains immutable.
+The Candidate V10 effect has not been computed.

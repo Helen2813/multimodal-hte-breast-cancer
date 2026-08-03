@@ -1,0 +1,23 @@
+{
+  "source": {
+    "stage27_lock": "data/derived/manifests/stage27_candidate_v10_bootstrap_calculation_manifest.json",
+    "checkpoint": "results/tables/stage27_candidate_v10_bootstrap/s27_106_bootstrap_checkpoint.csv",
+    "stage27_interval_table": "results/tables/stage27_candidate_v10_bootstrap/s27_107_interval_table.csv",
+    "stage26_point_estimate": "results/tables/stage26_candidate_v10_point_estimate/s26_102_candidate_v10_point_estimate.csv"
+  },
+  "output": {
+    "table_dir": "results/tables/stage27b_candidate_v10_interval_repair",
+    "corrected_interval_table": "results/tables/stage27b_candidate_v10_interval_repair/s27b_108_corrected_interval_table.csv",
+    "audit": "results/tables/stage27b_candidate_v10_interval_repair/s27b_108_interval_audit.json"
+  },
+  "expected": {
+    "protocol_id": "PAPER_A_CANDIDATE_V10_5302107BE048C9E2",
+    "bootstrap_id": "PAPER_A_V10_BOOTSTRAP_2DF1DE10C0283275",
+    "repetitions": 300,
+    "point_estimate_days": 67.9143835576809,
+    "percentile_ci_low_days": -10.707290730520002,
+    "percentile_ci_high_days": 144.48223691394017,
+    "tolerance_days": 1e-09
+  },
+  "boundary": "No model or bootstrap estimate is rerun. The primary percentile interval is unchanged. The repair adds the studentized sensitivity interval that was locked in Stage 27 but omitted from the Stage 107 output."
+}

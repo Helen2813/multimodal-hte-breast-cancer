@@ -1,0 +1,73 @@
+{
+  "source": {
+    "v10_cohort": "data/derived/candidate_v10/outer_hormone_hrpos_her2neg_landmark180_no_documented_chemo_by180_ascertainable.csv",
+    "v10_compact": "data/derived/candidate_v10/outer_hormone_hrpos_her2neg_landmark180_no_documented_chemo_by180_ascertainable_compact.csv",
+    "v10_manifest": "data/derived/manifests/stage25c_candidate_v10_protocol_lock_manifest.json",
+    "v10_protocol": "paper_A_treatment_effects/candidate_v10/candidate_v10_protocol_amendment.json",
+    "v10_estimator_spec": "paper_A_treatment_effects/candidate_v10/candidate_v10_estimator_spec.json",
+    "stage25c_config": "stage25c_v10_unclipped_ato_config.json",
+    "v9_point_estimate": "results/tables/79_candidate_v9_final_point_estimate.csv"
+  },
+  "output": {
+    "table_dir": "results/tables/stage26_candidate_v10_point_estimate",
+    "calculation_manifest": "data/derived/manifests/stage26_candidate_v10_point_estimate_calculation_manifest.json",
+    "partition_table": "results/tables/stage26_candidate_v10_point_estimate/s26_102_partition_estimates.csv",
+    "patient_scores": "results/tables/stage26_candidate_v10_point_estimate/s26_102_patient_scores_LOCAL_ONLY.csv",
+    "point_estimate": "results/tables/stage26_candidate_v10_point_estimate/s26_102_candidate_v10_point_estimate.csv",
+    "diagnostics": "results/tables/stage26_candidate_v10_point_estimate/s26_102_point_estimate_diagnostics.json",
+    "decision": "results/tables/stage26_candidate_v10_point_estimate/s26_103_point_estimate_review_decision.json"
+  },
+  "expected": {
+    "protocol_id": "PAPER_A_CANDIDATE_V10_5302107BE048C9E2",
+    "n": 271,
+    "treated": 138,
+    "control": 133,
+    "events": 36,
+    "treated_events": 9,
+    "control_events": 27,
+    "features": 13,
+    "partitions": 20
+  },
+  "estimator": {
+    "partition_base_seeds": [
+      18101,
+      18102,
+      18103,
+      18104,
+      18105,
+      18106,
+      18107,
+      18108,
+      18109,
+      18110,
+      18111,
+      18112,
+      18113,
+      18114,
+      18115,
+      18116,
+      18117,
+      18118,
+      18119,
+      18120
+    ],
+    "n_folds": 5,
+    "maximum_partition_retries": 20,
+    "horizon_days": 730.0,
+    "interval_days": 90.0,
+    "censoring_g_min": 0.1,
+    "outcome_bound_low": 0.0,
+    "outcome_bound_high": 730.0,
+    "score": "algebraically_stabilized_unclipped_overlap_aipw"
+  },
+  "numerical_review": {
+    "maximum_partition_mcse_days_for_automatic_bootstrap_recommendation": 10.0,
+    "maximum_partition_range_days_for_automatic_bootstrap_recommendation": 250.0,
+    "maximum_nuisance_retry_for_automatic_bootstrap_recommendation": 5,
+    "minimum_G_min_raw": 0.005,
+    "require_all_partitions": true,
+    "require_finite_estimate": true,
+    "require_estimate_within_rmst_bounds": true
+  },
+  "boundary": "Stage 26 computes the locked Candidate V10 point estimate only. Its influence-function interval is diagnostic and is not the primary publication interval. A separate fully refitted patient bootstrap is not run until the Stage 26 diagnostics are reviewed."
+}

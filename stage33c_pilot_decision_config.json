@@ -1,0 +1,44 @@
+{
+  "stage": "33C",
+  "analysis_name": "Stage 33 pilot decision amendment",
+  "status": "DETERMINISTIC_PILOT_DECISION_AMENDMENT",
+  "source": {
+    "stage33b_manifest": "data/derived/manifests/stage33b_sequence_simulation_summary_repair_manifest.json",
+    "stage33b_summary": "results/tables/stage33b_sequence_simulation_summary_repair/s33b_128_repaired_scenario_summary.csv",
+    "stage33b_anchor_checks": "results/tables/stage33b_sequence_simulation_summary_repair/s33b_128_empirical_anchor_check.csv",
+    "stage33b_final": "results/tables/stage33b_sequence_simulation_summary_repair/s33b_128_repair_summary.json"
+  },
+  "expected": {
+    "stage33_simulation_id": "PAPER_A_SEQUENCE_SIM_PILOT_V2_51A7BCDAE235EECB",
+    "stage33b_repair_id": "PAPER_A_STAGE33B_NULL_REPAIR_DD94FEB2DF4B9E43",
+    "summary_rows": 36,
+    "valid_methods": [
+      "adjusted_full",
+      "sequencing_aware"
+    ],
+    "diagnostic_comparator": "naive_full"
+  },
+  "valid_method_gates": {
+    "minimum_success_fraction": 0.98,
+    "maximum_absolute_bias_days": 15.0,
+    "minimum_if_coverage": 0.85,
+    "maximum_included_covariate_weighted_smd": 0.1
+  },
+  "diagnostic_comparator_checks": {
+    "minimum_success_fraction": 0.98,
+    "maximum_included_covariate_weighted_smd": 0.1,
+    "no_sequence_null_maximum_absolute_mean_estimate_days": 5.0,
+    "empirical_sequence_null_minimum_positive_mean_estimate_days": 10.0,
+    "empirical_sequence_minimum_absolute_weighted_chemo_smd": 0.4,
+    "empirical_sequence_benefit_minimum_positive_bias_days": 10.0
+  },
+  "decision_principle": "The naive_full method is intentionally misspecified because it omits the sequencing variable. Its loss of coverage under strong sequencing is a target simulation result, not a validity failure. Confirmatory readiness is therefore gated on numerical success and included-variable balance for the naive comparator, plus predeclared mechanism checks. Bias and coverage validity gates apply only to adjusted_full and sequencing_aware.",
+  "output": {
+    "table_dir": "results/tables/stage33c_pilot_decision_amendment",
+    "manifest": "data/derived/manifests/stage33c_pilot_decision_amendment_manifest.json",
+    "valid_method_gates": "results/tables/stage33c_pilot_decision_amendment/s33c_129_valid_method_gates.csv",
+    "diagnostic_checks": "results/tables/stage33c_pilot_decision_amendment/s33c_129_naive_diagnostic_checks.csv",
+    "final_json": "results/tables/stage33c_pilot_decision_amendment/s33c_129_pilot_decision.json"
+  },
+  "boundary": "No simulation is rerun and no Stage 33 or Stage 33B output is changed. This amendment documents a design-gate error discovered after restoration of the true-null summaries: coverage was incorrectly required for an intentionally misspecified diagnostic comparator. The amended rule is locked before the independent confirmatory simulation."
+}

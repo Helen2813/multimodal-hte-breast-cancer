@@ -1,0 +1,115 @@
+{
+  "stage": 33,
+  "analysis_name": "Revised empirically anchored treatment-sequencing simulation pilot",
+  "status": "SIMULATION_PROTOCOL_PILOT_V2",
+  "source": {
+    "stage32_manifest": "data/derived/manifests/stage32_sequence_dgm_calibration_manifest.json",
+    "stage32_recommended_dgm": "results/tables/stage32_sequence_dgm_calibration/s32_123_recommended_dgm.json",
+    "stage32_summary": "results/tables/stage32_sequence_dgm_calibration/s32_123_calibration_summary.json",
+    "stage31_utils": "scripts/_stage31_simulation_utils.py"
+  },
+  "expected": {
+    "stage32_calibration_id": "PAPER_A_SEQUENCE_DGM_CAL_CE49A55D6F441130",
+    "stage32_status": "STAGE32_DGM_CALIBRATION_ACCEPTED",
+    "full_cohort_n_anchor": 559,
+    "strict_sequence_eligible_n_anchor": 271,
+    "full_treated_anchor": 194,
+    "strict_treated_anchor": 138,
+    "strict_control_anchor": 133,
+    "strict_treated_events_anchor": 9,
+    "strict_control_events_anchor": 27,
+    "chemo_fraction_treated_anchor": 0.26288659793814434,
+    "chemo_fraction_control_anchor": 0.6054794520547945
+  },
+  "simulation": {
+    "repetitions_per_scenario": 100,
+    "base_seed": 33000,
+    "sample_sizes": [
+      559,
+      1118
+    ],
+    "sequencing_levels": [
+      "none",
+      "half_empirical",
+      "empirical"
+    ],
+    "effect_regimes": [
+      "null",
+      "empirically_calibrated_benefit"
+    ],
+    "intervals": 10,
+    "interval_days": 73.0,
+    "horizon_days": 730.0,
+    "censoring_g_min": 0.1,
+    "folds": 5,
+    "timing_ascertainability_probability": 0.9442508710801394,
+    "timing_ascertainability_assumption": "Independent thinning within the no-chemotherapy population, used only to reproduce the strict V10 sample-size scale without creating treatment- or outcome-dependent eligibility."
+  },
+  "methods": {
+    "naive_full": {
+      "population": "all simulated day-180 survivors",
+      "covariates": [
+        "x1",
+        "x2",
+        "x3"
+      ],
+      "primary_truth": "intended_full_ato_truth",
+      "secondary_truth": "naive_implied_overlap_truth",
+      "description": "Full-cohort overlap-RMST estimator omitting the chemotherapy-sequencing indicator. Total error is decomposed into overlap-target drift and residual omitted-sequencing bias."
+    },
+    "adjusted_full": {
+      "population": "all simulated day-180 survivors",
+      "covariates": [
+        "x1",
+        "x2",
+        "x3",
+        "chemo_by_day180"
+      ],
+      "primary_truth": "intended_full_ato_truth",
+      "description": "Full-cohort estimator including the observed sequencing indicator."
+    },
+    "sequencing_aware": {
+      "population": "chemo_by_day180 == 0 and timing_ascertainable == 1",
+      "covariates": [
+        "x1",
+        "x2",
+        "x3"
+      ],
+      "primary_truth": "strict_no_chemo_ato_truth",
+      "description": "Sequencing-aware estimator in an independently thinned no-chemotherapy population. Its target population differs from both full-cohort estimators."
+    }
+  },
+  "outputs": {
+    "table_dir": "results/tables/stage33_sequence_simulation_pilot_v2",
+    "figure_dir": "results/figures/stage33_sequence_simulation_pilot_v2",
+    "manifest": "data/derived/manifests/stage33_sequence_simulation_pilot_v2_manifest.json",
+    "checkpoint": "results/tables/stage33_sequence_simulation_pilot_v2/s33_125_simulation_checkpoint.csv",
+    "errors": "results/tables/stage33_sequence_simulation_pilot_v2/s33_125_simulation_errors.csv",
+    "scenario_summary": "results/tables/stage33_sequence_simulation_pilot_v2/s33_126_scenario_summary.csv",
+    "naive_decomposition": "results/tables/stage33_sequence_simulation_pilot_v2/s33_126_naive_bias_decomposition.csv",
+    "empirical_anchor_check": "results/tables/stage33_sequence_simulation_pilot_v2/s33_126_empirical_anchor_check.csv",
+    "design_gates": "results/tables/stage33_sequence_simulation_pilot_v2/s33_126_design_gates.csv",
+    "final_json": "results/tables/stage33_sequence_simulation_pilot_v2/s33_126_simulation_pilot_v2_summary.json",
+    "bias_figure": "results/figures/stage33_sequence_simulation_pilot_v2/s33_126_bias_by_sequencing.png",
+    "omitted_balance_figure": "results/figures/stage33_sequence_simulation_pilot_v2/s33_126_omitted_chemo_smd.png",
+    "null_figure": "results/figures/stage33_sequence_simulation_pilot_v2/s33_126_null_effect_estimates.png"
+  },
+  "pilot_gates": {
+    "minimum_success_fraction": 0.98,
+    "maximum_absolute_bias_adjusted_days": 15.0,
+    "maximum_absolute_bias_sequencing_aware_days": 15.0,
+    "minimum_primary_if_coverage": 0.85,
+    "maximum_included_covariate_weighted_smd": 0.1,
+    "empirical_anchor_tolerances": {
+      "full_treated_fraction": 0.03,
+      "chemo_fraction_treated": 0.035,
+      "chemo_fraction_control": 0.035,
+      "strict_population_n": 15.0,
+      "strict_treated_n": 12.0,
+      "strict_control_n": 12.0,
+      "strict_treated_events": 4.0,
+      "strict_control_events": 6.0
+    }
+  },
+  "boundary": "This is a revised pilot, not confirmatory simulation evidence. Candidate V9 and Candidate V10 remain unchanged. Stage 32 outcome-calibrated benefit is treated as an observed-risk-matching scenario, not as an externally known causal effect. The null-effect scenarios are required to assess false positive treatment contrasts under sequencing imbalance. No manuscript prose is generated."
+}

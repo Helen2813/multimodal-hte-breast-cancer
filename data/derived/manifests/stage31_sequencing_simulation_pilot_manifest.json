@@ -1,0 +1,113 @@
+{
+  "status": "STAGE31_SIMULATION_PILOT_LOCKED",
+  "created_utc": "2026-08-02T01:12:36.061277+00:00",
+  "purpose": "Evaluate how chemotherapy sequencing can distort observational day-180 treatment-initiation analyses, and assess the behaviour of full-cohort versus sequencing-aware overlap-RMST estimators.",
+  "simulation": {
+    "repetitions_per_scenario": 50,
+    "base_seed": 31000,
+    "sample_sizes": [
+      300,
+      600
+    ],
+    "sequencing_strengths": {
+      "none": 0.0,
+      "moderate": 1.2,
+      "strong": 2.2
+    },
+    "intervals": 10,
+    "interval_days": 73.0,
+    "horizon_days": 730.0,
+    "censoring_g_min": 0.1,
+    "folds": 5,
+    "true_treatment_log_hazard_effect": -0.45,
+    "data_generating_parameters": {
+      "chemo_logit_intercept": -0.1,
+      "chemo_x1": 0.7,
+      "chemo_x3": 0.6,
+      "treatment_logit_intercept": 1.0,
+      "treatment_x1": -0.25,
+      "treatment_x2": -0.15,
+      "event_logit_intercept": -4.6,
+      "event_x1": 0.45,
+      "event_x2": 0.3,
+      "event_x3": 0.5,
+      "event_chemo": 0.7,
+      "censor_logit_intercept": -4.0,
+      "censor_x1": 0.25,
+      "censor_chemo": 0.2
+    }
+  },
+  "estimators": {
+    "naive_full": {
+      "population": "all simulated day-180 survivors",
+      "covariates": [
+        "x1",
+        "x2",
+        "x3"
+      ],
+      "target_truth": "full_cohort_ato_truth",
+      "description": "Full-cohort overlap-RMST estimator that omits the observed chemotherapy-sequencing indicator."
+    },
+    "adjusted_full": {
+      "population": "all simulated day-180 survivors",
+      "covariates": [
+        "x1",
+        "x2",
+        "x3",
+        "chemo_by_day180"
+      ],
+      "target_truth": "full_cohort_ato_truth",
+      "description": "Full-cohort overlap-RMST estimator including the observed chemotherapy-sequencing indicator."
+    },
+    "sequencing_aware": {
+      "population": "chemo_by_day180 == 0",
+      "covariates": [
+        "x1",
+        "x2",
+        "x3"
+      ],
+      "target_truth": "no_chemo_ato_truth",
+      "description": "Sequencing-aware estimator restricted to patients without chemotherapy by day 180. This has a different target population from the full-cohort estimators."
+    }
+  },
+  "pilot_gates": {
+    "minimum_success_fraction": 0.95,
+    "maximum_absolute_bias_days_for_adjusted_estimators": 15.0,
+    "minimum_if_coverage_for_adjusted_estimators": 0.85,
+    "maximum_mean_abs_weighted_smd": 0.1
+  },
+  "boundary": "This is a focused pilot simulation. It does not modify Candidate V9 or Candidate V10, does not generate manuscript prose, and does not authorize confirmatory simulation claims until a larger locked run is completed.",
+  "locked_files": [
+    {
+      "path": "stage31_sequencing_simulation_config.json",
+      "sha256": "18f1cb2b3884b8e31e3fe93d58c9078bce84d49b7b3806f2969ac8cb21fe0140",
+      "size_bytes": 3706
+    },
+    {
+      "path": "scripts/_stage31_simulation_utils.py",
+      "sha256": "a78fbcd96650a162a07fa4f0a286741c0599bd5ccd88990050f6d28eba29fe44",
+      "size_bytes": 18517
+    },
+    {
+      "path": "scripts/118_stage31_lock_simulation_pilot.py",
+      "sha256": "3681a1c82e1fdb1c952c52ddfdb1b15bc569f12f0d94ddafb242f039a871d72c",
+      "size_bytes": 2541
+    },
+    {
+      "path": "scripts/119_stage31_run_simulation_pilot.py",
+      "sha256": "2a362d73eedf7d0c1ea8d58d4fc4999b1a54987afaa99d08a94795cd3279681f",
+      "size_bytes": 10474
+    },
+    {
+      "path": "scripts/120_stage31_summarize_simulation_pilot.py",
+      "sha256": "abf8b1858b47915d849d2b058fdde4fbcff797fb43ef85f77ae370541fad50f6",
+      "size_bytes": 10666
+    },
+    {
+      "path": "run_stage31_sequencing_simulation_pilot.ps1",
+      "sha256": "3e318f198b7b9172f47404ee6e5fc65670a36a4148bc75b820e929444bf1d6c0",
+      "size_bytes": 2046
+    }
+  ],
+  "simulation_id": "PAPER_A_SEQUENCE_SIM_PILOT_DBFEBD551FD45507"
+}

@@ -1,0 +1,141 @@
+{
+  "stage": 25,
+  "status_before_lock": "CANDIDATE_V10_PROTOCOL_AMENDMENT_PENDING",
+  "status_after_lock": "PAPER_A_CANDIDATE_V10_LOCKED_BEFORE_EFFECT_ESTIMATION",
+  "disclosure": "Post hoc protocol amendment prompted by the locked Candidate V9 result and a subsequent treatment-sequencing audit. The Candidate V10 population and estimator are locked before any Candidate V10 treatment-effect estimate is computed.",
+  "source": {
+    "v9_cohort": "data/derived/landmark_cohorts/outer_hormone_hrpos_her2neg_landmark180.csv",
+    "v9_compact": "data/derived/landmark_compact/outer_hormone_hrpos_her2neg_landmark180_compact.csv",
+    "clinical": "data/processed/01_Clinical/clinical.tsv",
+    "v9_manifest": "data/derived/manifests/80_candidate_v9_protocol_lock_manifest.json",
+    "v9_estimand": "paper_A_treatment_effects/primary_estimand_FINAL.json",
+    "v9_model_registry": "paper_A_treatment_effects/model_registry_FINAL.json",
+    "v9_bootstrap_registry": "paper_A_treatment_effects/bootstrap_registry_FINAL.json"
+  },
+  "output": {
+    "table_dir": "results/tables/stage25_candidate_v10",
+    "derived_dir": "data/derived/candidate_v10",
+    "protocol_dir": "paper_A_treatment_effects/candidate_v10",
+    "cohort": "data/derived/candidate_v10/outer_hormone_hrpos_her2neg_landmark180_no_documented_chemo_by180_ascertainable.csv",
+    "compact": "data/derived/candidate_v10/outer_hormone_hrpos_her2neg_landmark180_no_documented_chemo_by180_ascertainable_compact.csv",
+    "sequence_registry": "data/derived/candidate_v10/candidate_v10_sequence_registry_LOCAL_ONLY.csv",
+    "protocol": "paper_A_treatment_effects/candidate_v10/candidate_v10_protocol_amendment.json",
+    "analysis_plan": "paper_A_treatment_effects/candidate_v10/candidate_v10_analysis_plan.md",
+    "manifest": "data/derived/manifests/stage25_candidate_v10_protocol_lock_manifest.json",
+    "sentinel": "paper_A_treatment_effects/candidate_v10/PROTOCOL_LOCKED_CANDIDATE_V10.txt"
+  },
+  "expected_v9": {
+    "n": 559,
+    "treated": 194,
+    "control": 365,
+    "events": 50,
+    "features": 13,
+    "protocol_id": "PAPER_A_CANDIDATE_V9_9F1E8E368C92EC02"
+  },
+  "stage24_reproduction": {
+    "broad_no_chemo_start_by_day180_n": 287,
+    "broad_no_chemo_start_by_day180_treated": 143,
+    "broad_no_chemo_start_by_day180_control": 144,
+    "broad_no_chemo_start_by_day180_events": 40,
+    "any_chemo_start_by_day180_n": 272
+  },
+  "candidate_v10_population": {
+    "landmark_day": 180,
+    "eligibility": "Verified HR-positive/HER2-negative day-180 landmark survivors with no documented chemotherapy initiation by day 180 and ascertainable chemotherapy start timing.",
+    "selection_rule": "Include patients with no chemotherapy-classified treatment records, or patients for whom every chemotherapy-classified record has a valid nonnegative start day and all valid chemotherapy start days are greater than 180. Exclude any patient with a chemotherapy-classified record having a missing, negative, or implausible start day, and exclude any patient with chemotherapy initiated on or before day 180.",
+    "future_treatment_rule": "Chemotherapy initiated after day 180 does not exclude a patient. No restriction uses whether chemotherapy was ever received after the landmark.",
+    "treatment_contrast": "Hormone therapy initiation during days 0-180 versus no initiation by day 180.",
+    "estimand": "ATO difference in 730-day post-landmark restricted mean survival time, initiation minus no initiation."
+  },
+  "timing": {
+    "minimum_valid_day": 0,
+    "maximum_valid_day": 10000,
+    "horizon_days": 730.0,
+    "interval_days": 90.0
+  },
+  "estimator": {
+    "n_folds": 5,
+    "primary_g_min": 0.1,
+    "partition_base_seeds": [
+      18101,
+      18102,
+      18103,
+      18104,
+      18105,
+      18106,
+      18107,
+      18108,
+      18109,
+      18110,
+      18111,
+      18112,
+      18113,
+      18114,
+      18115,
+      18116,
+      18117,
+      18118,
+      18119,
+      18120
+    ],
+    "maximum_partition_retries": 20,
+    "propensity": "Exact locked Candidate V9 cross-fitted Stage 30 regularized propensity specification.",
+    "censoring": "Exact locked Candidate V9 cross-fitted discrete-time regularized logistic censoring model.",
+    "outcome": "Exact locked Candidate V9 cross-fitted arm-specific ridge model on the IPCW-RMST pseudo-outcome, bounded to [0,730] days.",
+    "aggregation": "Exact locked Candidate V9 patient-level repeated-score aggregation over 20 nuisance partitions."
+  },
+  "pre_effect_gates": {
+    "minimum_n": 240,
+    "minimum_treated": 90,
+    "minimum_control": 90,
+    "minimum_total_events": 25,
+    "minimum_events_each_arm": 5,
+    "required_feature_count": 13,
+    "maximum_abs_ato_weighted_smd": 0.1,
+    "minimum_ato_ess_fraction_each_arm": 0.4,
+    "maximum_fraction_propensity_below_0_05": 0.1,
+    "maximum_fraction_propensity_above_0_95": 0.1
+  },
+  "treatment_classification": {
+    "text_column_tokens": [
+      "treatment_type",
+      "therapy_type",
+      "treatment_name",
+      "drug_name",
+      "pharmaceutical_therapy_drug_name",
+      "regimen"
+    ],
+    "chemotherapy_patterns": [
+      "\\bchemo",
+      "cyclophosph",
+      "doxorub",
+      "adriamycin",
+      "paclitax",
+      "docetax",
+      "carboplatin",
+      "cisplatin",
+      "capecitab",
+      "gemcitab",
+      "methotrex",
+      "fluorourac",
+      "epirub",
+      "\\bcmf\\b",
+      "\\bfec\\b",
+      "\\bac\\b",
+      "\\btaxane"
+    ],
+    "hormone_patterns": [
+      "\\bhorm",
+      "\\bendocr",
+      "tamox",
+      "anastro",
+      "letroz",
+      "exemestan",
+      "fulvestr",
+      "goserelin",
+      "leuprol",
+      "aromatase",
+      "ovarian suppression"
+    ]
+  }
+}

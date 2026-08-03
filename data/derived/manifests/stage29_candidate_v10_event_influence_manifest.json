@@ -1,0 +1,104 @@
+{
+  "status": "STAGE29_EVENT_INFLUENCE_LOCKED",
+  "created_utc": "2026-08-02T00:50:17.171852+00:00",
+  "v10_protocol_id": "PAPER_A_CANDIDATE_V10_5302107BE048C9E2",
+  "stage26_calculation_id": "PAPER_A_V10_POINT_9B12226A42F67A61",
+  "primary_point_estimate_days": 67.9143835576809,
+  "event_patients": {
+    "total": 36,
+    "early_hormone": 9,
+    "control": 27
+  },
+  "omitted_set_sha256": "e9b5a9e846000f79e963525b5a6aae2ef3edd60a374a8370d2426ffa15eaf260",
+  "omitted_set_path_LOCAL_ONLY": "results/tables/stage29_candidate_v10_event_influence/s29_112_locked_event_set_LOCAL_ONLY.csv",
+  "boundary": "This is a post hoc diagnostic influence analysis, not a new primary estimand or sensitivity population. Each of the 36 observed event patients is omitted once, and the full Candidate V10 point-estimation pipeline is refitted over the same 20 nuisance partitions. No bootstrap confidence interval is created and the locked Candidate V10 primary analysis remains unchanged.",
+  "locked_files": [
+    {
+      "path": "stage29_v10_event_influence_config.json",
+      "sha256": "8d30013453560485edaaa4bc350a2e960554325685281e9acc0b0168ef8b77af",
+      "size_bytes": 3895
+    },
+    {
+      "path": "scripts/_stage29_v10_event_influence_utils.py",
+      "sha256": "0e35bc6d6c3ca3996f6ff899da53df6f64c19642b423c16da846f9a92c194963",
+      "size_bytes": 9433
+    },
+    {
+      "path": "scripts/112_stage29_lock_event_influence.py",
+      "sha256": "0e0887d00f8b7c89b953a0114d4e15084f400d669ccd9c0227016856bc048673",
+      "size_bytes": 5692
+    },
+    {
+      "path": "scripts/113_stage29_run_leave_one_event_out.py",
+      "sha256": "6726bbe2aa585043fb0be3dd64f28e0041f7c81cd94c5d348266dd37ee19af33",
+      "size_bytes": 6296
+    },
+    {
+      "path": "scripts/114_stage29_summarize_event_influence.py",
+      "sha256": "cf7e3034e2eeb2e79054d0486e73c55fe86d2704007cc6526e6f4c98d51f21e2",
+      "size_bytes": 7953
+    },
+    {
+      "path": "run_stage29_candidate_v10_event_influence.ps1",
+      "sha256": "3426611e2c63bf27074e71275238205df26472ecda93d9dc2252180e2e9017be",
+      "size_bytes": 1998
+    },
+    {
+      "path": "data/derived/manifests/stage25c_candidate_v10_protocol_lock_manifest.json",
+      "sha256": "1cf09a2f5db4155e39f55b12f6a06f0dbb4190aff8b2239a044e7d420f4be440",
+      "size_bytes": 3654
+    },
+    {
+      "path": "paper_A_treatment_effects/candidate_v10/candidate_v10_protocol_amendment.json",
+      "sha256": "4021cf529b782c53b0f802e3da73297c418d066fc0b0208a9d0950f7edbe5807",
+      "size_bytes": 2680
+    },
+    {
+      "path": "paper_A_treatment_effects/candidate_v10/candidate_v10_estimator_spec.json",
+      "sha256": "b9fd529ef5ea6aeb5ed6939fec2da3d86cc78b39b22dbb446733851c074a4548",
+      "size_bytes": 8037
+    },
+    {
+      "path": "stage25c_v10_unclipped_ato_config.json",
+      "sha256": "93379d3f124a4a2caa30d49018fe346e30ac832c371e9e82b42d0bcc2f43350e",
+      "size_bytes": 5208
+    },
+    {
+      "path": "stage26_v10_point_estimate_config.json",
+      "sha256": "8043cc20740db8a770444e31ff29f59499166dedba9614c6f95d457befbda296",
+      "size_bytes": 3037
+    },
+    {
+      "path": "data/derived/manifests/stage26_candidate_v10_point_estimate_calculation_manifest.json",
+      "sha256": "4b59cdadb3c96beceee494e1d2e5f036f6cacea33f8a7e43ba9eadb2adb910c9",
+      "size_bytes": 3824
+    },
+    {
+      "path": "results/tables/stage26_candidate_v10_point_estimate/s26_102_candidate_v10_point_estimate.csv",
+      "sha256": "1469ff5d714f7819b411396d4c180ad75a004391e532ae0988505d982631fd5e",
+      "size_bytes": 1206
+    },
+    {
+      "path": "data/derived/candidate_v10/outer_hormone_hrpos_her2neg_landmark180_no_documented_chemo_by180_ascertainable.csv",
+      "sha256": "95e739b19f847b13b084d24a39826b3c882d1ba83e6677c0f794588228a96078",
+      "size_bytes": 1060366
+    },
+    {
+      "path": "data/derived/candidate_v10/outer_hormone_hrpos_her2neg_landmark180_no_documented_chemo_by180_ascertainable_compact.csv",
+      "sha256": "697bd3db804775387e9f86c8e0470bd78d43a4f018269529ef603750680849bf",
+      "size_bytes": 34094
+    },
+    {
+      "path": "scripts/_stage25c_v10_utils.py",
+      "sha256": "54c614f067be8a51aabd967e9ebf34a24d3e7669cd6bc29d26354e33ac66a03a",
+      "size_bytes": 12816
+    },
+    {
+      "path": "scripts/_stage26_v10_utils.py",
+      "sha256": "bc7eda1da8b3088acfe19335dff45f85f7a1a9310205411308361fc8b261bd32",
+      "size_bytes": 15045
+    }
+  ],
+  "v10_integrity_hash": "d39bf97e51550fafc95c9cdf5f9787a4f418522c66bd775b3f540325c9e72fd1",
+  "influence_id": "PAPER_A_V10_EVENT_INFLUENCE_9570FBF821978035"
+}

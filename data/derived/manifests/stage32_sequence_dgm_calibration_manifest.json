@@ -1,0 +1,122 @@
+{
+  "status": "STAGE32_DGM_CALIBRATION_LOCKED",
+  "created_utc": "2026-08-02T01:28:44.687412+00:00",
+  "empirical_targets": {
+    "full_treated_fraction": 0.3470483005366726,
+    "chemo_fraction_treated": 0.26288659793814434,
+    "chemo_fraction_control": 0.6054794520547945,
+    "no_chemo_fraction": 0.5134168157423972,
+    "treated_fraction_no_chemo": 0.49825783972125437,
+    "event_risk_treated_no_chemo": 0.06521739130434782,
+    "event_risk_control_no_chemo": 0.20300751879699247
+  },
+  "target_tolerances": {
+    "full_treated_fraction": 0.015,
+    "chemo_fraction_treated": 0.02,
+    "chemo_fraction_control": 0.02,
+    "no_chemo_fraction": 0.02,
+    "treated_fraction_no_chemo": 0.02,
+    "event_risk_treated_no_chemo": 0.01,
+    "event_risk_control_no_chemo": 0.015
+  },
+  "calibration": {
+    "training_sobol_power": 17,
+    "validation_sobol_power": 19,
+    "training_seed": 32017,
+    "validation_seed": 32019,
+    "multi_start_count": 12,
+    "optimizer_max_nfev": 2500,
+    "intervals": 10,
+    "interval_days": 73.0,
+    "censoring_parameters": {
+      "intercept": -4.0,
+      "x1": 0.25,
+      "chemo": 0.2
+    },
+    "fixed_covariate_parameters": {
+      "x2_probability": 0.45,
+      "x3_intercept": -0.2,
+      "x3_x1": 0.55,
+      "chemo_x1": 0.7,
+      "chemo_x3": 0.6,
+      "treatment_x1": -0.25,
+      "treatment_x2": -0.15,
+      "event_x1": 0.45,
+      "event_x2": 0.3,
+      "event_x3": 0.5,
+      "event_chemo": 0.7
+    },
+    "parameter_bounds": {
+      "chemo_logit_intercept": [
+        -1.5,
+        0.8
+      ],
+      "treatment_logit_intercept": [
+        -1.2,
+        1.0
+      ],
+      "sequencing_strength": [
+        0.1,
+        3.5
+      ],
+      "event_logit_intercept": [
+        -6.5,
+        -2.5
+      ],
+      "true_treatment_log_hazard_effect": [
+        -2.5,
+        -0.05
+      ]
+    },
+    "starting_points": {
+      "treatment": [
+        -0.1,
+        0.1,
+        1.5
+      ],
+      "outcome": [
+        -4.2,
+        -1.0
+      ]
+    }
+  },
+  "decision_rules": {
+    "maximum_absolute_standardized_residual": 1.0,
+    "maximum_root_mean_squared_standardized_residual": 0.75,
+    "require_validation_pass": true
+  },
+  "boundary": "This stage calibrates a future simulation data-generating mechanism. It does not change Candidate V9 or Candidate V10, does not reinterpret the Stage 31 pilot as confirmatory evidence, and does not generate manuscript prose. The observed margins are used transparently only to define an empirically anchored simulation regime.",
+  "locked_files": [
+    {
+      "path": "stage32_sequence_dgm_calibration_config.json",
+      "sha256": "db37861383192ac397939816a31f4897d29207aceb66151aadacfdf1147fd426",
+      "size_bytes": 4459
+    },
+    {
+      "path": "scripts/_stage32_dgm_calibration_utils.py",
+      "sha256": "115bfad968f4e6bf39647847f7cdbbd7a12596e8955326e1bcca9a26ce8076ee",
+      "size_bytes": 14119
+    },
+    {
+      "path": "scripts/121_stage32_lock_dgm_calibration.py",
+      "sha256": "bb02c2601c7ece8a45d672c0da1134f9dc327f2f01358cbcd62c8da40c953ead",
+      "size_bytes": 2607
+    },
+    {
+      "path": "scripts/122_stage32_run_dgm_calibration.py",
+      "sha256": "cf9b99e6ef8b0847ce14bdd8b126b42b741a87c8dc4d2cee5600335bdcdc5c4f",
+      "size_bytes": 6211
+    },
+    {
+      "path": "scripts/123_stage32_summarize_dgm_calibration.py",
+      "sha256": "bc6e1d01560f3a9c376966d901ae26fda587cb10c62a9e76e8150f58becab2a2",
+      "size_bytes": 4904
+    },
+    {
+      "path": "run_stage32_sequence_dgm_calibration.ps1",
+      "sha256": "567e7f66ba80d7be93a8139694d9a3496d472bf936bfc89edf73e25579110e85",
+      "size_bytes": 1980
+    }
+  ],
+  "calibration_id": "PAPER_A_SEQUENCE_DGM_CAL_CE49A55D6F441130"
+}

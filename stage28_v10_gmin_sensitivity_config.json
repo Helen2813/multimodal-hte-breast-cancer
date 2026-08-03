@@ -1,0 +1,86 @@
+{
+  "stage": 28,
+  "analysis_name": "Candidate V10 censoring-truncation sensitivity",
+  "status": "POST_HOC_DIAGNOSTIC_SENSITIVITY",
+  "source": {
+    "v10_manifest": "data/derived/manifests/stage25c_candidate_v10_protocol_lock_manifest.json",
+    "v10_protocol": "paper_A_treatment_effects/candidate_v10/candidate_v10_protocol_amendment.json",
+    "v10_estimator_spec": "paper_A_treatment_effects/candidate_v10/candidate_v10_estimator_spec.json",
+    "stage25c_config": "stage25c_v10_unclipped_ato_config.json",
+    "stage26_config": "stage26_v10_point_estimate_config.json",
+    "stage26_calculation_manifest": "data/derived/manifests/stage26_candidate_v10_point_estimate_calculation_manifest.json",
+    "stage26_point_estimate": "results/tables/stage26_candidate_v10_point_estimate/s26_102_candidate_v10_point_estimate.csv",
+    "v10_cohort": "data/derived/candidate_v10/outer_hormone_hrpos_her2neg_landmark180_no_documented_chemo_by180_ascertainable.csv",
+    "v10_compact": "data/derived/candidate_v10/outer_hormone_hrpos_her2neg_landmark180_no_documented_chemo_by180_ascertainable_compact.csv"
+  },
+  "output": {
+    "table_dir": "results/tables/stage28_candidate_v10_gmin_sensitivity",
+    "calculation_manifest": "data/derived/manifests/stage28_candidate_v10_gmin_sensitivity_manifest.json",
+    "partition_table": "results/tables/stage28_candidate_v10_gmin_sensitivity/s28_110_gmin_partition_estimates.csv",
+    "summary_table": "results/tables/stage28_candidate_v10_gmin_sensitivity/s28_110_gmin_sensitivity_summary.csv",
+    "paired_differences": "results/tables/stage28_candidate_v10_gmin_sensitivity/s28_110_paired_partition_differences.csv",
+    "diagnostics": "results/tables/stage28_candidate_v10_gmin_sensitivity/s28_111_gmin_sensitivity_diagnostics.json",
+    "figure": "results/figures/stage28_candidate_v10_gmin_sensitivity/s28_111_gmin_sensitivity.png"
+  },
+  "expected": {
+    "v10_protocol_id": "PAPER_A_CANDIDATE_V10_5302107BE048C9E2",
+    "stage26_calculation_id": "PAPER_A_V10_POINT_9B12226A42F67A61",
+    "primary_point_estimate_days": 67.9143835576809,
+    "primary_g_min": 0.1,
+    "n": 271,
+    "treated": 138,
+    "control": 133,
+    "events": 36,
+    "treated_events": 9,
+    "control_events": 27,
+    "features": 13,
+    "partitions": 20,
+    "reproduction_tolerance_days": 1e-09
+  },
+  "sensitivity": {
+    "g_min_values": [
+      0.1,
+      0.15,
+      0.2
+    ],
+    "primary_value": 0.1,
+    "post_hoc_values": [
+      0.15,
+      0.2
+    ],
+    "rationale": "The locked Candidate V10 primary analysis used censoring-survival truncation at G-min=0.10. Because the fully refitted bootstrap showed heavy IPCW pseudo-outcome tails, this post hoc diagnostic sensitivity evaluates more conservative truncation at 0.15 and 0.20.",
+    "inference": "Point estimates only. No new bootstrap confidence intervals are computed, and the primary G-min=0.10 analysis remains unchanged."
+  },
+  "estimator": {
+    "partition_base_seeds": [
+      18101,
+      18102,
+      18103,
+      18104,
+      18105,
+      18106,
+      18107,
+      18108,
+      18109,
+      18110,
+      18111,
+      18112,
+      18113,
+      18114,
+      18115,
+      18116,
+      18117,
+      18118,
+      18119,
+      18120
+    ],
+    "n_folds": 5,
+    "maximum_partition_retries": 20,
+    "horizon_days": 730.0,
+    "interval_days": 90.0,
+    "outcome_bound_low": 0.0,
+    "outcome_bound_high": 730.0,
+    "score": "algebraically_stabilized_unclipped_overlap_aipw"
+  },
+  "boundary": "Only the censoring-survival truncation constant changes. The frozen Candidate V10 cohort, treatment definition, 13-variable adjustment set, full-sample unpenalized propensity, overlap score, cross-fitting fold construction, nuisance learners, and 20 partition seeds remain unchanged. No manuscript prose is generated."
+}

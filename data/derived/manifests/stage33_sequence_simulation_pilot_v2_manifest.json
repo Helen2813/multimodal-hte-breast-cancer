@@ -1,0 +1,170 @@
+{
+  "status": "STAGE33_SIMULATION_PILOT_V2_LOCKED",
+  "created_utc": "2026-08-02T01:36:26.366096+00:00",
+  "stage32_calibration_id": "PAPER_A_SEQUENCE_DGM_CAL_CE49A55D6F441130",
+  "calibrated_parameters": {
+    "chemo_logit_intercept": -0.3327983637758644,
+    "treatment_logit_intercept": -0.02186254321532893,
+    "sequencing_strength": 1.3090110840542706,
+    "event_logit_intercept": -4.0096839907672095,
+    "true_treatment_log_hazard_effect": -1.139887843434639
+  },
+  "fixed_covariate_parameters": {
+    "x2_probability": 0.45,
+    "x3_intercept": -0.2,
+    "x3_x1": 0.55,
+    "chemo_x1": 0.7,
+    "chemo_x3": 0.6,
+    "treatment_x1": -0.25,
+    "treatment_x2": -0.15,
+    "event_x1": 0.45,
+    "event_x2": 0.3,
+    "event_x3": 0.5,
+    "event_chemo": 0.7
+  },
+  "censoring_parameters": {
+    "intercept": -4.0,
+    "x1": 0.25,
+    "chemo": 0.2
+  },
+  "scenario_parameters": {
+    "sequencing_strengths": {
+      "none": 0.0,
+      "half_empirical": 0.6545055420271353,
+      "empirical": 1.3090110840542706
+    },
+    "treatment_effects": {
+      "null": 0.0,
+      "empirically_calibrated_benefit": -1.139887843434639
+    }
+  },
+  "simulation": {
+    "repetitions_per_scenario": 100,
+    "base_seed": 33000,
+    "sample_sizes": [
+      559,
+      1118
+    ],
+    "sequencing_levels": [
+      "none",
+      "half_empirical",
+      "empirical"
+    ],
+    "effect_regimes": [
+      "null",
+      "empirically_calibrated_benefit"
+    ],
+    "intervals": 10,
+    "interval_days": 73.0,
+    "horizon_days": 730.0,
+    "censoring_g_min": 0.1,
+    "folds": 5,
+    "timing_ascertainability_probability": 0.9442508710801394,
+    "timing_ascertainability_assumption": "Independent thinning within the no-chemotherapy population, used only to reproduce the strict V10 sample-size scale without creating treatment- or outcome-dependent eligibility."
+  },
+  "methods": {
+    "naive_full": {
+      "population": "all simulated day-180 survivors",
+      "covariates": [
+        "x1",
+        "x2",
+        "x3"
+      ],
+      "primary_truth": "intended_full_ato_truth",
+      "secondary_truth": "naive_implied_overlap_truth",
+      "description": "Full-cohort overlap-RMST estimator omitting the chemotherapy-sequencing indicator. Total error is decomposed into overlap-target drift and residual omitted-sequencing bias."
+    },
+    "adjusted_full": {
+      "population": "all simulated day-180 survivors",
+      "covariates": [
+        "x1",
+        "x2",
+        "x3",
+        "chemo_by_day180"
+      ],
+      "primary_truth": "intended_full_ato_truth",
+      "description": "Full-cohort estimator including the observed sequencing indicator."
+    },
+    "sequencing_aware": {
+      "population": "chemo_by_day180 == 0 and timing_ascertainable == 1",
+      "covariates": [
+        "x1",
+        "x2",
+        "x3"
+      ],
+      "primary_truth": "strict_no_chemo_ato_truth",
+      "description": "Sequencing-aware estimator in an independently thinned no-chemotherapy population. Its target population differs from both full-cohort estimators."
+    }
+  },
+  "pilot_gates": {
+    "minimum_success_fraction": 0.98,
+    "maximum_absolute_bias_adjusted_days": 15.0,
+    "maximum_absolute_bias_sequencing_aware_days": 15.0,
+    "minimum_primary_if_coverage": 0.85,
+    "maximum_included_covariate_weighted_smd": 0.1,
+    "empirical_anchor_tolerances": {
+      "full_treated_fraction": 0.03,
+      "chemo_fraction_treated": 0.035,
+      "chemo_fraction_control": 0.035,
+      "strict_population_n": 15.0,
+      "strict_treated_n": 12.0,
+      "strict_control_n": 12.0,
+      "strict_treated_events": 4.0,
+      "strict_control_events": 6.0
+    }
+  },
+  "boundary": "This is a revised pilot, not confirmatory simulation evidence. Candidate V9 and Candidate V10 remain unchanged. Stage 32 outcome-calibrated benefit is treated as an observed-risk-matching scenario, not as an externally known causal effect. The null-effect scenarios are required to assess false positive treatment contrasts under sequencing imbalance. No manuscript prose is generated.",
+  "locked_files": [
+    {
+      "path": "stage33_sequence_simulation_pilot_v2_config.json",
+      "sha256": "f45fef66d5b6e212579f84334c972d9c62f9c5707986bf03d0fe71a73ffd5ed5",
+      "size_bytes": 5331
+    },
+    {
+      "path": "scripts/_stage33_simulation_v2_utils.py",
+      "sha256": "3f56b363d48f5dad3be94201e636bf0cc3a0843ea66f4f67a05bfff1baa9af22",
+      "size_bytes": 15198
+    },
+    {
+      "path": "scripts/124_stage33_lock_simulation_pilot_v2.py",
+      "sha256": "adcebb2aa22597e044c8c362a59b2fd4b8d55ddb81eca6db9d9004e9cd7f4f74",
+      "size_bytes": 4430
+    },
+    {
+      "path": "scripts/125_stage33_run_simulation_pilot_v2.py",
+      "sha256": "1ed0accef7902ec1de8632a313cbb602cbb55612851c44d0d287ac140fc017d7",
+      "size_bytes": 15439
+    },
+    {
+      "path": "scripts/126_stage33_summarize_simulation_pilot_v2.py",
+      "sha256": "6043be06a5cf296ea6cd89e16ddb5c5c15d020bccd8f149c3812b0e842ee58d7",
+      "size_bytes": 20221
+    },
+    {
+      "path": "run_stage33_sequence_simulation_pilot_v2.ps1",
+      "sha256": "564119bcbae43e9c874ec00bc1b50e569b554a9e532994c9d7cc72478df33485",
+      "size_bytes": 2306
+    },
+    {
+      "path": "data/derived/manifests/stage32_sequence_dgm_calibration_manifest.json",
+      "sha256": "4697b664d481dd31dadfeca0f86913dee6c38c7fe07e84c211fd930d339d6c4e",
+      "size_bytes": 3829
+    },
+    {
+      "path": "results/tables/stage32_sequence_dgm_calibration/s32_123_recommended_dgm.json",
+      "sha256": "1cb37d5d8cf4b489268f58e3b4755550d948f8b58e972564cd36d6ed03e5282f",
+      "size_bytes": 3340
+    },
+    {
+      "path": "results/tables/stage32_sequence_dgm_calibration/s32_123_calibration_summary.json",
+      "sha256": "543fceb5ed4186f74ca640f7ba5049f2fa98c2c2fc522db1bb92fe4d0c1d6c68",
+      "size_bytes": 1863
+    },
+    {
+      "path": "scripts/_stage31_simulation_utils.py",
+      "sha256": "a78fbcd96650a162a07fa4f0a286741c0599bd5ccd88990050f6d28eba29fe44",
+      "size_bytes": 18517
+    }
+  ],
+  "simulation_id": "PAPER_A_SEQUENCE_SIM_PILOT_V2_51A7BCDAE235EECB"
+}

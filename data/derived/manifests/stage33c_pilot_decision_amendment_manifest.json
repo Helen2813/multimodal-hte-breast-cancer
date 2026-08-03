@@ -1,0 +1,46 @@
+{
+  "status": "STAGE33C_PILOT_DECISION_AMENDMENT_LOCKED_AND_APPLIED",
+  "created_utc": "2026-08-02T03:01:06.186340+00:00",
+  "stage33_simulation_id": "PAPER_A_SEQUENCE_SIM_PILOT_V2_51A7BCDAE235EECB",
+  "stage33b_repair_id": "PAPER_A_STAGE33B_NULL_REPAIR_DD94FEB2DF4B9E43",
+  "decision_principle": "The naive_full method is intentionally misspecified because it omits the sequencing variable. Its loss of coverage under strong sequencing is a target simulation result, not a validity failure. Confirmatory readiness is therefore gated on numerical success and included-variable balance for the naive comparator, plus predeclared mechanism checks. Bias and coverage validity gates apply only to adjusted_full and sequencing_aware.",
+  "boundary": "No simulation is rerun and no Stage 33 or Stage 33B output is changed. This amendment documents a design-gate error discovered after restoration of the true-null summaries: coverage was incorrectly required for an intentionally misspecified diagnostic comparator. The amended rule is locked before the independent confirmatory simulation.",
+  "locked_files": [
+    {
+      "path": "stage33c_pilot_decision_config.json",
+      "sha256": "7fe77c6830ea08f04e6f30d40e062c802906bc45ff3ab335dc7795b418305f40",
+      "size_bytes": 2851
+    },
+    {
+      "path": "scripts/129_stage33c_amend_pilot_decision.py",
+      "sha256": "34067655aff28044624c0bce64b0d48f9c880e442e122bc03861dae3812a80db",
+      "size_bytes": 11431
+    },
+    {
+      "path": "run_stage33c_pilot_decision_amendment.ps1",
+      "sha256": "9d5b343e67063b636243bc05dd7738daeb5a38d38c86d9b71cadf1e82a063c16",
+      "size_bytes": 1256
+    },
+    {
+      "path": "data/derived/manifests/stage33b_sequence_simulation_summary_repair_manifest.json",
+      "sha256": "eee4d6622ec97d80101f3cd3f1b84d5210872439e0572f36a99dcaa61987b7f7",
+      "size_bytes": 4471
+    },
+    {
+      "path": "results/tables/stage33b_sequence_simulation_summary_repair/s33b_128_repaired_scenario_summary.csv",
+      "sha256": "f69ed5300cd6830603131fe6dd9c6b3aa26b7d39feea942be4e755927d167027",
+      "size_bytes": 21870
+    },
+    {
+      "path": "results/tables/stage33b_sequence_simulation_summary_repair/s33b_128_empirical_anchor_check.csv",
+      "sha256": "d66cbd2c385106dd3017cc7eb001fb715b8f79154fb3f388dbfcfb69f247357e",
+      "size_bytes": 649
+    },
+    {
+      "path": "results/tables/stage33b_sequence_simulation_summary_repair/s33b_128_repair_summary.json",
+      "sha256": "488e269fb4e3f2f1bc9835642987952f828875a882c06acbceb9f4b8e856fbea",
+      "size_bytes": 95636
+    }
+  ],
+  "decision_id": "PAPER_A_STAGE33C_DECISION_90F45E520DCA8FBE"
+}

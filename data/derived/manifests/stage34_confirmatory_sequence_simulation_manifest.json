@@ -1,0 +1,173 @@
+{
+  "status": "STAGE34_CONFIRMATORY_SIMULATION_LOCKED",
+  "created_utc": "2026-08-02T03:07:25.643486+00:00",
+  "stage32_calibration_id": "PAPER_A_SEQUENCE_DGM_CAL_CE49A55D6F441130",
+  "stage33c_decision_id": "PAPER_A_STAGE33C_DECISION_90F45E520DCA8FBE",
+  "calibrated_parameters": {
+    "chemo_logit_intercept": -0.3327983637758644,
+    "treatment_logit_intercept": -0.02186254321532893,
+    "sequencing_strength": 1.3090110840542706,
+    "event_logit_intercept": -4.0096839907672095,
+    "true_treatment_log_hazard_effect": -1.139887843434639
+  },
+  "fixed_covariate_parameters": {
+    "x2_probability": 0.45,
+    "x3_intercept": -0.2,
+    "x3_x1": 0.55,
+    "chemo_x1": 0.7,
+    "chemo_x3": 0.6,
+    "treatment_x1": -0.25,
+    "treatment_x2": -0.15,
+    "event_x1": 0.45,
+    "event_x2": 0.3,
+    "event_x3": 0.5,
+    "event_chemo": 0.7
+  },
+  "censoring_parameters": {
+    "intercept": -4.0,
+    "x1": 0.25,
+    "chemo": 0.2
+  },
+  "scenario_parameters": {
+    "sequencing_strengths": {
+      "none": 0.0,
+      "half_empirical": 0.6545055420271353,
+      "empirical": 1.3090110840542706
+    },
+    "treatment_effects": {
+      "true_zero": 0.0,
+      "observed_risk_benefit": -1.139887843434639
+    }
+  },
+  "simulation": {
+    "repetitions_per_scenario": 500,
+    "base_seed": 34000000,
+    "sample_sizes": [
+      559,
+      1118
+    ],
+    "sequencing_levels": [
+      "none",
+      "half_empirical",
+      "empirical"
+    ],
+    "effect_regimes": [
+      "true_zero",
+      "observed_risk_benefit"
+    ],
+    "intervals": 10,
+    "interval_days": 73.0,
+    "horizon_days": 730.0,
+    "censoring_g_min": 0.1,
+    "folds": 5,
+    "timing_ascertainability_probability": 0.9442508710801394,
+    "scenario_count": 12,
+    "method_count": 3,
+    "expected_method_runs": 18000
+  },
+  "methods": {
+    "naive_full": {
+      "covariates": [
+        "x1",
+        "x2",
+        "x3"
+      ],
+      "role": "intentionally_misspecified_diagnostic_comparator"
+    },
+    "adjusted_full": {
+      "covariates": [
+        "x1",
+        "x2",
+        "x3",
+        "chemo_by_day180"
+      ],
+      "role": "valid_full_cohort_estimator"
+    },
+    "sequencing_aware": {
+      "covariates": [
+        "x1",
+        "x2",
+        "x3"
+      ],
+      "role": "valid_restricted_population_estimator"
+    }
+  },
+  "confirmatory_gates": {
+    "minimum_success_fraction": 0.99,
+    "valid_methods": [
+      "adjusted_full",
+      "sequencing_aware"
+    ],
+    "maximum_absolute_bias_valid_methods_days": 10.0,
+    "minimum_if_coverage_valid_methods": 0.9,
+    "maximum_included_covariate_weighted_smd": 0.1,
+    "naive_no_sequence_true_zero_max_abs_estimate_days": 5.0,
+    "naive_empirical_true_zero_min_positive_estimate_days": 10.0,
+    "naive_empirical_min_abs_weighted_chemo_smd": 0.4,
+    "naive_empirical_benefit_min_positive_bias_days": 10.0,
+    "empirical_anchor_tolerances": {
+      "full_treated_fraction": 0.02,
+      "chemo_fraction_treated": 0.025,
+      "chemo_fraction_control": 0.025,
+      "strict_population_n": 10.0,
+      "strict_treated_n": 9.0,
+      "strict_control_n": 9.0,
+      "strict_treated_events": 3.0,
+      "strict_control_events": 4.0
+    }
+  },
+  "boundary": "This is an independent confirmatory simulation with new seeds. Pilot repetitions are not reused. Scenario definitions, DGM parameters, methods, truths, and gates are locked before any confirmatory result. The observed-risk benefit regime is a simulation scenario calibrated to empirical event margins, not a claim that the calibrated parameter is the true clinical effect.",
+  "locked_files": [
+    {
+      "path": "stage34_confirmatory_simulation_config.json",
+      "sha256": "c384721724475d810cfbf04e6460e3b6821f92dea52625ba66c4c0872540c105",
+      "size_bytes": 4492
+    },
+    {
+      "path": "scripts/130_stage34_lock_confirmatory_simulation.py",
+      "sha256": "566aec98f63588564102f3ade282936ab8fd854c50666a638e8ca825801030cc",
+      "size_bytes": 3980
+    },
+    {
+      "path": "scripts/131_stage34_run_confirmatory_simulation.py",
+      "sha256": "3a0e9ff2a5cc7fe235b4fd30a6e706fb1d6eef0cf36ae46d1dc6bfd895c1379a",
+      "size_bytes": 12480
+    },
+    {
+      "path": "scripts/132_stage34_summarize_confirmatory_simulation.py",
+      "sha256": "2bcd8afad30276f522461302872f94693c5f9c5512eea91b0f6eb05063834d2f",
+      "size_bytes": 18814
+    },
+    {
+      "path": "run_stage34_confirmatory_sequence_simulation.ps1",
+      "sha256": "269e03d038f0e895dded103a9fd8c98c1f3da60038ba9fca05f239385db3ba74",
+      "size_bytes": 1906
+    },
+    {
+      "path": "results/tables/stage32_sequence_dgm_calibration/s32_123_recommended_dgm.json",
+      "sha256": "1cb37d5d8cf4b489268f58e3b4755550d948f8b58e972564cd36d6ed03e5282f",
+      "size_bytes": 3340
+    },
+    {
+      "path": "data/derived/manifests/stage33c_pilot_decision_amendment_manifest.json",
+      "sha256": "d06696d4e7362e6a648b54e3dd4a5b3b65b7b869a2eb275668f876fdff8a5e63",
+      "size_bytes": 2681
+    },
+    {
+      "path": "results/tables/stage33c_pilot_decision_amendment/s33c_129_pilot_decision.json",
+      "sha256": "00c142f87468b7a0d2dce27001c409919dea29a46d1bd312001fedd5e9cbb4fb",
+      "size_bytes": 15544
+    },
+    {
+      "path": "scripts/_stage31_simulation_utils.py",
+      "sha256": "a78fbcd96650a162a07fa4f0a286741c0599bd5ccd88990050f6d28eba29fe44",
+      "size_bytes": 18517
+    },
+    {
+      "path": "scripts/_stage33_simulation_v2_utils.py",
+      "sha256": "3f56b363d48f5dad3be94201e636bf0cc3a0843ea66f4f67a05bfff1baa9af22",
+      "size_bytes": 15198
+    }
+  ],
+  "simulation_id": "PAPER_A_SEQUENCE_CONFIRMATORY_5C6BC3ED8126D9BB"
+}

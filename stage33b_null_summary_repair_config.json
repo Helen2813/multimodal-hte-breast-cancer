@@ -1,0 +1,61 @@
+{
+  "stage": "33B",
+  "analysis_name": "Stage 33 null-scenario summary repair",
+  "status": "DETERMINISTIC_SUMMARY_REPAIR",
+  "source": {
+    "stage33_config": "stage33_sequence_simulation_pilot_v2_config.json",
+    "stage33_manifest": "data/derived/manifests/stage33_sequence_simulation_pilot_v2_manifest.json",
+    "checkpoint": "results/tables/stage33_sequence_simulation_pilot_v2/s33_125_simulation_checkpoint.csv",
+    "original_scenario_summary": "results/tables/stage33_sequence_simulation_pilot_v2/s33_126_scenario_summary.csv",
+    "original_design_gates": "results/tables/stage33_sequence_simulation_pilot_v2/s33_126_design_gates.csv",
+    "original_final_json": "results/tables/stage33_sequence_simulation_pilot_v2/s33_126_simulation_pilot_v2_summary.json"
+  },
+  "output": {
+    "table_dir": "results/tables/stage33b_sequence_simulation_summary_repair",
+    "figure_dir": "results/figures/stage33b_sequence_simulation_summary_repair",
+    "audit_manifest": "data/derived/manifests/stage33b_sequence_simulation_summary_repair_manifest.json",
+    "parse_audit": "results/tables/stage33b_sequence_simulation_summary_repair/s33b_127_null_token_parse_audit.csv",
+    "scenario_inventory": "results/tables/stage33b_sequence_simulation_summary_repair/s33b_127_scenario_inventory.csv",
+    "scenario_summary": "results/tables/stage33b_sequence_simulation_summary_repair/s33b_128_repaired_scenario_summary.csv",
+    "null_summary": "results/tables/stage33b_sequence_simulation_summary_repair/s33b_128_null_scenario_summary.csv",
+    "naive_decomposition": "results/tables/stage33b_sequence_simulation_summary_repair/s33b_128_repaired_naive_bias_decomposition.csv",
+    "empirical_anchor_check": "results/tables/stage33b_sequence_simulation_summary_repair/s33b_128_empirical_anchor_check.csv",
+    "design_gates": "results/tables/stage33b_sequence_simulation_summary_repair/s33b_128_repaired_design_gates.csv",
+    "original_vs_repaired": "results/tables/stage33b_sequence_simulation_summary_repair/s33b_128_original_vs_repaired_summary.csv",
+    "final_json": "results/tables/stage33b_sequence_simulation_summary_repair/s33b_128_repair_summary.json",
+    "null_figure": "results/figures/stage33b_sequence_simulation_summary_repair/s33b_128_null_effect_estimates.png",
+    "bias_figure": "results/figures/stage33b_sequence_simulation_summary_repair/s33b_128_bias_by_sequencing.png"
+  },
+  "expected": {
+    "simulation_id": "PAPER_A_SEQUENCE_SIM_PILOT_V2_51A7BCDAE235EECB",
+    "sample_sizes": [
+      559,
+      1118
+    ],
+    "sequencing_levels": [
+      "none",
+      "half_empirical",
+      "empirical"
+    ],
+    "effect_regimes": [
+      "null",
+      "empirically_calibrated_benefit"
+    ],
+    "methods": [
+      "naive_full",
+      "adjusted_full",
+      "sequencing_aware"
+    ],
+    "repetitions_per_scenario": 100,
+    "scenario_count": 12,
+    "summary_row_count": 36,
+    "checkpoint_row_count": 3600,
+    "null_checkpoint_rows": 1800,
+    "benefit_checkpoint_rows": 1800,
+    "null_summary_rows": 18,
+    "benefit_summary_rows": 18,
+    "original_summary_rows_expected_from_bug": 18
+  },
+  "repair_reason": "The literal value 'null' was first parsed as missing during Stage 33 checkpoint append/resume operations. Existing null rows were then written back as empty CSV fields. The scenario_id retained the true regime suffix for every row. Stage 33B v2 deterministically reconstructs effect_regime from scenario_id, verifies that this restores exactly 1,800 null and 1,800 benefit method-runs, and rebuilds all summaries without rerunning any simulation.",
+  "boundary": "No simulation repetition is rerun. No estimator, scenario, seed, truth, gate, or empirical anchor is changed. Original Stage 33 files remain untouched. Empty effect_regime cells are reconstructed only from the locked scenario_id suffix, which already encodes NULL or EMPIRICALLY_CALIBRATED_BENEFIT."
+}

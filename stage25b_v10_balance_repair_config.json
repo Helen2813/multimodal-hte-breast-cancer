@@ -1,0 +1,90 @@
+{
+  "source": {
+    "v10_cohort": "data/derived/candidate_v10/outer_hormone_hrpos_her2neg_landmark180_no_documented_chemo_by180_ascertainable.csv",
+    "v10_compact": "data/derived/candidate_v10/outer_hormone_hrpos_her2neg_landmark180_no_documented_chemo_by180_ascertainable_compact.csv",
+    "stage25_cohort_summary": "results/tables/stage25_candidate_v10/s25_94_v10_cohort_summary.json",
+    "stage25_failed_gates": "results/tables/stage25_candidate_v10/s25_95_pre_effect_gates.csv",
+    "stage25_original_balance": "results/tables/stage25_candidate_v10/s25_95_ato_balance.csv",
+    "stage25_original_summary": "results/tables/stage25_candidate_v10/s25_95_pre_effect_summary.json",
+    "v9_manifest": "data/derived/manifests/80_candidate_v9_protocol_lock_manifest.json",
+    "v9_estimand": "paper_A_treatment_effects/primary_estimand_FINAL.json",
+    "v9_model_registry": "paper_A_treatment_effects/model_registry_FINAL.json",
+    "v9_bootstrap_registry": "paper_A_treatment_effects/bootstrap_registry_FINAL.json"
+  },
+  "output": {
+    "table_dir": "results/tables/stage25b_candidate_v10_balance_repair",
+    "protocol_dir": "paper_A_treatment_effects/candidate_v10",
+    "protocol": "paper_A_treatment_effects/candidate_v10/candidate_v10_protocol_amendment.json",
+    "estimator_spec": "paper_A_treatment_effects/candidate_v10/candidate_v10_estimator_spec.json",
+    "manifest": "data/derived/manifests/stage25b_candidate_v10_protocol_lock_manifest.json",
+    "sentinel": "paper_A_treatment_effects/candidate_v10/PROTOCOL_LOCKED_CANDIDATE_V10.txt"
+  },
+  "expected": {
+    "n": 271,
+    "treated": 138,
+    "control": 133,
+    "events": 36,
+    "treated_events": 9,
+    "control_events": 27,
+    "features": 13
+  },
+  "design_repair": {
+    "name": "full_sample_unpenalized_logistic_mle",
+    "rationale": "The V9 cross-fitted regularized propensity retained material post-weighting imbalance in age, diagnosis year, and W_T_missing within the restricted V10 cohort. Before any V10 effect was computed, the propensity nuisance is changed to a low-dimensional unpenalized logistic maximum-likelihood model over the same 13 baseline variables. Censoring and outcome nuisances remain cross-fitted exactly as in Candidate V9.",
+    "imputation": "full-cohort median for each baseline feature",
+    "scaling": "full-cohort mean zero and unit population SD",
+    "intercept": true,
+    "penalty": "none",
+    "optimizer": "statsmodels GLM Binomial IRLS",
+    "maximum_iterations": 2000,
+    "tolerance": 1e-12,
+    "zero_variance_columns": "excluded from fitting but retained in balance tables",
+    "effect_outcome_used_for_design_selection": false
+  },
+  "gates": {
+    "maximum_abs_ato_weighted_smd": 0.02,
+    "minimum_ato_ess_fraction_each_arm": 0.4,
+    "maximum_fraction_propensity_below_0_05": 0.1,
+    "maximum_fraction_propensity_above_0_95": 0.1,
+    "minimum_propensity": 0.01,
+    "maximum_propensity": 0.99,
+    "maximum_absolute_coefficient": 25.0
+  },
+  "locked_estimator": {
+    "target": "ATO",
+    "treatment": "Hormone therapy initiated during days 0-180 versus no initiation by day 180.",
+    "outcome": "730-day post-landmark restricted mean survival time",
+    "propensity": "Full-sample unpenalized logistic MLE on the locked 13-variable compact baseline set, refitted in every patient-bootstrap sample.",
+    "censoring": "Exact Candidate V9 cross-fitted discrete-time regularized logistic censoring model.",
+    "outcome_regression": "Exact Candidate V9 cross-fitted arm-specific bounded RidgeCV model on the IPCW-RMST pseudo-outcome.",
+    "score": "Exact Candidate V9 ATO-AIPW score except for the locked propensity nuisance change.",
+    "nuisance_partition_seeds": [
+      18101,
+      18102,
+      18103,
+      18104,
+      18105,
+      18106,
+      18107,
+      18108,
+      18109,
+      18110,
+      18111,
+      18112,
+      18113,
+      18114,
+      18115,
+      18116,
+      18117,
+      18118,
+      18119,
+      18120
+    ],
+    "n_folds": 5,
+    "g_min": 0.1,
+    "horizon_days": 730.0,
+    "interval_days": 90.0,
+    "primary_sensitivity": "Original Candidate V9 cross-fitted regularized propensity applied to the same locked V10 population."
+  },
+  "disclosure": "Post hoc design-stage amendment. Candidate V9 identified the need for a chemotherapy-sequencing audit. Stage 25 then froze the strict V10 population but failed the prespecified weighted-balance gate. Candidate V10 treatment effects remained uncomputed. Stage 25B revises only the propensity nuisance using treatment and baseline covariates, then locks the design before effect estimation."
+}
